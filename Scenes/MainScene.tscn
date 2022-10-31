@@ -1,0 +1,645 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Room/Room Sprites/Nasubi Floor-01.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Player/Farmer1.png" type="Texture" id=3]
+[ext_resource path="res://Inventory/UI Box20x20.png" type="Texture" id=4]
+[ext_resource path="res://Mail.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/FloorSlot.gd" type="Script" id=6]
+[ext_resource path="res://Inventory/Inventory.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Mouse.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/InventorySlotDisplay.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/InventoryGrid.gd" type="Script" id=11]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 22.0
+height = 38.0
+
+[node name="main" type="Node2D"]
+
+[node name="Floor" type="Sprite" parent="."]
+self_modulate = Color( 0.91, 0.91, 0.91, 1 )
+position = Vector2( 516.5, 303 )
+scale = Vector2( 2.27093, 1.61579 )
+texture = ExtResource( 1 )
+
+[node name="GridContainer" type="GridContainer" parent="Floor"]
+margin_left = -225.238
+margin_top = -186.905
+margin_right = 158.762
+margin_bottom = 188.095
+rect_min_size = Vector2( 50, 50 )
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FloorSlot" type="TextureRect" parent="Floor/GridContainer"]
+margin_right = 48.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot2" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 48.0
+margin_right = 96.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot3" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 96.0
+margin_right = 144.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot4" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 144.0
+margin_right = 192.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot5" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 192.0
+margin_right = 240.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot6" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 240.0
+margin_right = 288.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot7" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 288.0
+margin_right = 336.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot8" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 336.0
+margin_right = 384.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot9" type="TextureRect" parent="Floor/GridContainer"]
+margin_top = 64.0
+margin_right = 48.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot10" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 48.0
+margin_top = 64.0
+margin_right = 96.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot11" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 96.0
+margin_top = 64.0
+margin_right = 144.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot12" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 144.0
+margin_top = 64.0
+margin_right = 192.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot13" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 240.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot14" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 240.0
+margin_top = 64.0
+margin_right = 288.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot15" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 288.0
+margin_top = 64.0
+margin_right = 336.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot16" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 336.0
+margin_top = 64.0
+margin_right = 384.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot17" type="TextureRect" parent="Floor/GridContainer"]
+margin_top = 128.0
+margin_right = 48.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot18" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 48.0
+margin_top = 128.0
+margin_right = 96.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot19" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 96.0
+margin_top = 128.0
+margin_right = 144.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot20" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 144.0
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot21" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 192.0
+margin_top = 128.0
+margin_right = 240.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot22" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 240.0
+margin_top = 128.0
+margin_right = 288.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot23" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 288.0
+margin_top = 128.0
+margin_right = 336.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot24" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 336.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot25" type="TextureRect" parent="Floor/GridContainer"]
+margin_top = 192.0
+margin_right = 48.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot26" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 48.0
+margin_top = 192.0
+margin_right = 96.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot27" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 96.0
+margin_top = 192.0
+margin_right = 144.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot28" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 144.0
+margin_top = 192.0
+margin_right = 192.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot29" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 192.0
+margin_top = 192.0
+margin_right = 240.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot30" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 240.0
+margin_top = 192.0
+margin_right = 288.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot31" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 288.0
+margin_top = 192.0
+margin_right = 336.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot32" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 336.0
+margin_top = 192.0
+margin_right = 384.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot33" type="TextureRect" parent="Floor/GridContainer"]
+margin_top = 256.0
+margin_right = 48.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot34" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 48.0
+margin_top = 256.0
+margin_right = 96.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot35" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 96.0
+margin_top = 256.0
+margin_right = 144.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot36" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 144.0
+margin_top = 256.0
+margin_right = 192.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot37" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 192.0
+margin_top = 256.0
+margin_right = 240.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot38" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 240.0
+margin_top = 256.0
+margin_right = 288.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot39" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 288.0
+margin_top = 256.0
+margin_right = 336.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot40" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 336.0
+margin_top = 256.0
+margin_right = 384.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot41" type="TextureRect" parent="Floor/GridContainer"]
+margin_top = 320.0
+margin_right = 48.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot42" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 48.0
+margin_top = 320.0
+margin_right = 96.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot43" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 96.0
+margin_top = 320.0
+margin_right = 144.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot44" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 144.0
+margin_top = 320.0
+margin_right = 192.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot45" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 192.0
+margin_top = 320.0
+margin_right = 240.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot46" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 240.0
+margin_top = 320.0
+margin_right = 288.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot47" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 288.0
+margin_top = 320.0
+margin_right = 336.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="FloorSlot48" type="TextureRect" parent="Floor/GridContainer"]
+margin_left = 336.0
+margin_top = 320.0
+margin_right = 384.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 48, 64 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -84, -272 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 262, 318 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( 267, 319 )
+scale = Vector2( 9.6, 9.6 )
+texture = ExtResource( 3 )
+
+[node name="Mail" parent="." instance=ExtResource( 5 )]
+position = Vector2( 70, 72 )
+scale = Vector2( 4, 4 )
+
+[node name="MailInv" type="TextureRect" parent="Mail"]
+visible = false
+margin_left = -17.0
+margin_top = 11.0
+margin_right = 43.0
+margin_bottom = 76.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryDisplay" type="GridContainer" parent="Mail/MailInv"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 3
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventorySlotDisplay" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_right = 20.0
+margin_bottom = 21.0
+
+[node name="InventorySlotDisplay2" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_left = 20.0
+margin_right = 40.0
+margin_bottom = 21.0
+
+[node name="InventorySlotDisplay3" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 21.0
+
+[node name="InventorySlotDisplay4" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_top = 21.0
+margin_right = 20.0
+margin_bottom = 42.0
+
+[node name="InventorySlotDisplay5" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_left = 20.0
+margin_top = 21.0
+margin_right = 40.0
+margin_bottom = 42.0
+
+[node name="InventorySlotDisplay6" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_left = 40.0
+margin_top = 21.0
+margin_right = 60.0
+margin_bottom = 42.0
+
+[node name="InventorySlotDisplay7" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_top = 42.0
+margin_right = 20.0
+margin_bottom = 63.0
+
+[node name="InventorySlotDisplay8" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_left = 20.0
+margin_top = 42.0
+margin_right = 40.0
+margin_bottom = 63.0
+
+[node name="InventorySlotDisplay9" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+margin_left = 40.0
+margin_top = 42.0
+margin_right = 60.0
+margin_bottom = 63.0
+
+[node name="Mouse" type="Sprite" parent="."]
+position = Vector2( 2, 2 )
+scale = Vector2( 1.4, 1.4 )
+script = ExtResource( 8 )
+
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot" to="Floor/GridContainer/FloorSlot" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot2" to="Floor/GridContainer/FloorSlot2" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot3" to="Floor/GridContainer/FloorSlot3" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot4" to="Floor/GridContainer/FloorSlot4" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot5" to="Floor/GridContainer/FloorSlot5" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot6" to="Floor/GridContainer/FloorSlot6" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot7" to="Floor/GridContainer/FloorSlot7" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot8" to="Floor/GridContainer/FloorSlot8" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot9" to="Floor/GridContainer/FloorSlot9" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot10" to="Floor/GridContainer/FloorSlot10" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot11" to="Floor/GridContainer/FloorSlot11" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot12" to="Floor/GridContainer/FloorSlot12" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot13" to="Floor/GridContainer/FloorSlot13" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot14" to="Floor/GridContainer/FloorSlot14" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot15" to="Floor/GridContainer/FloorSlot15" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot16" to="Floor/GridContainer/FloorSlot16" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot17" to="Floor/GridContainer/FloorSlot17" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot18" to="Floor/GridContainer/FloorSlot18" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot19" to="Floor/GridContainer/FloorSlot19" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot20" to="Floor/GridContainer/FloorSlot20" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot21" to="Floor/GridContainer/FloorSlot21" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot22" to="Floor/GridContainer/FloorSlot22" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot23" to="Floor/GridContainer/FloorSlot23" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot24" to="Floor/GridContainer/FloorSlot24" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot25" to="Floor/GridContainer/FloorSlot25" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot26" to="Floor/GridContainer/FloorSlot26" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot27" to="Floor/GridContainer/FloorSlot27" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot28" to="Floor/GridContainer/FloorSlot28" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot29" to="Floor/GridContainer/FloorSlot29" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot30" to="Floor/GridContainer/FloorSlot30" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot31" to="Floor/GridContainer/FloorSlot31" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot32" to="Floor/GridContainer/FloorSlot32" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot33" to="Floor/GridContainer/FloorSlot33" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot34" to="Floor/GridContainer/FloorSlot34" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot35" to="Floor/GridContainer/FloorSlot35" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot36" to="Floor/GridContainer/FloorSlot36" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot37" to="Floor/GridContainer/FloorSlot37" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot38" to="Floor/GridContainer/FloorSlot38" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot39" to="Floor/GridContainer/FloorSlot39" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot40" to="Floor/GridContainer/FloorSlot40" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot41" to="Floor/GridContainer/FloorSlot41" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot42" to="Floor/GridContainer/FloorSlot42" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot43" to="Floor/GridContainer/FloorSlot43" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot44" to="Floor/GridContainer/FloorSlot44" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot45" to="Floor/GridContainer/FloorSlot45" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot46" to="Floor/GridContainer/FloorSlot46" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot47" to="Floor/GridContainer/FloorSlot47" method="_on_FloorSlot_gui_input"]
+[connection signal="gui_input" from="Floor/GridContainer/FloorSlot48" to="Floor/GridContainer/FloorSlot48" method="_on_FloorSlot_gui_input"]
