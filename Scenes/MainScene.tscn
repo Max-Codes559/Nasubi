@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
-[ext_resource path="res://Player/NasubiPlayerBase.png" type="Texture" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/FloorSlotOverlayUnselected.png" type="Texture" id=4]
 [ext_resource path="res://Room/Room Sprites/SellBox.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/FloorSlot.gd" type="Script" id=6]
@@ -13,10 +12,6 @@
 [ext_resource path="res://Scripts/InventoryGrid.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/FloorGridCont.gd" type="Script" id=12]
 [ext_resource path="res://Room/floor and walls spritesheet.png" type="Texture" id=13]
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 595, 103, 16, 32 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "floor and walls spritesheet.png 0"
@@ -148,9 +143,13 @@ region = Rect2( 595, 103, 16, 32 )
 5/shapes = [  ]
 5/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 16.0
-height = 12.0
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 595, 103, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 479, 105, 9, 13 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 225 )
@@ -160,11 +159,6 @@ extents = Vector2( 10, 461.5 )
 
 [node name="main" type="Node2D"]
 
-[node name="Door" type="Sprite" parent="."]
-position = Vector2( 671, 54 )
-scale = Vector2( 4.60937, 4.60937 )
-texture = SubResource( 3 )
-
 [node name="RoomTileMap" type="TileMap" parent="."]
 scale = Vector2( 8, 8 )
 tile_set = SubResource( 2 )
@@ -172,9 +166,24 @@ cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 2, 8, 0, 2, 9, 0, 3, 11, 0, 1, 12, 0, 2, 13, 0, 2, 14, 0, 2, 15, 0, 4, 65536, 0, 65537, 65537, 0, 131074, 65538, 0, 131074, 65539, 0, 131074, 65540, 0, 131074, 65541, 0, 131074, 65542, 0, 131074, 65543, 0, 131074, 65544, 0, 131074, 65545, 0, 327683, 65546, 3, 0, 65547, 0, 327681, 65548, 0, 131074, 65549, 0, 131074, 65550, 0, 131074, 65551, 0, 65539, 131072, 0, 131072, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 3, 0, 131086, 3, 0, 131087, 0, 131076, 196608, 0, 131072, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196615, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196623, 0, 131076, 262144, 0, 131072, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 0, 131076, 327680, 0, 131072, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 327691, 3, 0, 327692, 3, 0, 327693, 3, 0, 327694, 3, 0, 327695, 0, 131076, 393216, 0, 131072, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 0, 131076, 458752, 0, 131072, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458765, 3, 0, 458766, 3, 0, 458767, 0, 131076, 524288, 0, 131072, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 0, 131076, 589824, 0, 262144, 589825, 0, 262146, 589826, 0, 262146, 589827, 0, 262146, 589828, 0, 262146, 589829, 0, 262146, 589830, 0, 262146, 589831, 0, 262146, 589832, 0, 262146, 589833, 0, 262146, 589834, 0, 262146, 589835, 0, 262146, 589836, 0, 262146, 589837, 0, 262146, 589838, 0, 262146, 589839, 0, 262148 )
 
-[node name="Floor" type="Node2D" parent="."]
+[node name="Door" type="Sprite" parent="."]
+position = Vector2( 672, 47 )
+scale = Vector2( 4.60937, 4.60937 )
+texture = SubResource( 3 )
+
+[node name="Floor" type="YSort" parent="."]
 self_modulate = Color( 0.77, 0.77, 0.77, 1 )
 position = Vector2( 464, 439 )
+
+[node name="Player" parent="Floor" instance=ExtResource( 2 )]
+
+[node name="Fake chair" type="Sprite" parent="Floor"]
+visible = false
+position = Vector2( 6, -125 )
+scale = Vector2( 12.0556, 12.0556 )
+z_index = 4
+z_as_relative = false
+texture = SubResource( 6 )
 
 [node name="GridContainer" type="GridContainer" parent="Floor"]
 visible = false
@@ -412,25 +421,10 @@ texture = ExtResource( 4 )
 stretch_mode = 1
 script = ExtResource( 6 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( -198, -330 )
-scale = Vector2( 1.4, 1.4 )
-z_index = 20
-script = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 262, 319 )
-scale = Vector2( 3.3375, 3.3375 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 262, 343 )
-scale = Vector2( 1, 0.5 )
-shape = SubResource( 1 )
-
 [node name="Mail" type="Sprite" parent="."]
 position = Vector2( 672, 94 )
 scale = Vector2( 4, 4 )
+z_index = 2
 texture = ExtResource( 5 )
 
 [node name="Button" type="Button" parent="Mail"]
@@ -536,38 +530,42 @@ margin_bottom = 63.0
 
 [node name="Mouse" type="Sprite" parent="."]
 position = Vector2( 2, 2 )
-scale = Vector2( 1.4, 1.4 )
+scale = Vector2( 4, 4 )
+z_index = 5
 script = ExtResource( 8 )
 
-[node name="Wall" type="StaticBody2D" parent="."]
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
 position = Vector2( 54, 114 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
 position = Vector2( 0, 222 )
 shape = SubResource( 4 )
 
-[node name="Wall2" type="StaticBody2D" parent="."]
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
 position = Vector2( 970, 112 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
 position = Vector2( 0, 231 )
 shape = SubResource( 4 )
 
-[node name="Wall3" type="StaticBody2D" parent="."]
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
 position = Vector2( 970, 88 )
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
 position = Vector2( -3, 452 )
 shape = SubResource( 5 )
 
-[node name="Wall4" type="StaticBody2D" parent="."]
+[node name="Wall4" type="StaticBody2D" parent="Walls"]
 position = Vector2( 964, 575 )
 rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
 position = Vector2( 6, 452 )
 shape = SubResource( 5 )
+disabled = true
 
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot" to="Floor/GridContainer/FloorSlot" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot" to="Floor/GridContainer/FloorSlot" method="_on_FloorSlot_mouse_entered"]
