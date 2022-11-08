@@ -7,5 +7,5 @@
 script = ExtResource( 1 )
 name = "Carrot"
 texture = ExtResource( 2 )
-itemType = "Food"
+itemType = "Furniture"
 size = ""

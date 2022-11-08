@@ -8,4 +8,4 @@ script = ExtResource( 2 )
 name = "Couch"
 texture = ExtResource( 1 )
 itemType = "Furniture"
-size = "1x2"
+size = "2x1"

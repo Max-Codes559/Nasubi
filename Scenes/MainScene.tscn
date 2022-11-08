@@ -1,523 +1,448 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Room/Room Sprites/Nasubi Floor-01.png" type="Texture" id=1]
+[ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
-[ext_resource path="res://Player/Farmer1.png" type="Texture" id=3]
-[ext_resource path="res://Inventory/UI Box20x20.png" type="Texture" id=4]
-[ext_resource path="res://Mail.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/NasubiPlayerBase.png" type="Texture" id=3]
+[ext_resource path="res://UI/FloorSlotOverlayUnselected.png" type="Texture" id=4]
+[ext_resource path="res://Room/Room Sprites/SellBox.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/FloorSlot.gd" type="Script" id=6]
 [ext_resource path="res://Inventory/Inventory.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Mouse.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/InventorySlotDisplay.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/MailInv.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/InventoryGrid.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/FloorGridCont.gd" type="Script" id=12]
+[ext_resource path="res://Room/floor and walls spritesheet.png" type="Texture" id=13]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 595, 103, 16, 32 )
+
+[sub_resource type="TileSet" id=2]
+0/name = "floor and walls spritesheet.png 0"
+0/texture = ExtResource( 13 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 27, 46, 44, 53 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 8, 8 )
+0/autotile/spacing = 1
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "floor and walls spritesheet.png 1"
+1/texture = ExtResource( 13 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 27, 100, 44, 44 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 8, 8 )
+1/autotile/spacing = 1
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "floor and walls spritesheet.png 2"
+2/texture = ExtResource( 13 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 27, 28, 8, 8 )
+2/tile_mode = 2
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 8, 8 )
+2/autotile/spacing = 1
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "floor and walls spritesheet.png 3"
+3/texture = ExtResource( 13 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 27, 1, 107, 26 )
+3/tile_mode = 2
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 8, 8 )
+3/autotile/spacing = 1
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "floor and walls spritesheet.png 4"
+4/texture = ExtResource( 13 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 72, 28, 26, 8 )
+4/tile_mode = 1
+4/autotile/bitmask_mode = 0
+4/autotile/bitmask_flags = [  ]
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 8, 8 )
+4/autotile/spacing = 1
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "floor and walls spritesheet.png 5"
+5/texture = ExtResource( 13 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 72, 100, 26, 17 )
+5/tile_mode = 2
+5/autotile/icon_coordinate = Vector2( 0, 0 )
+5/autotile/tile_size = Vector2( 8, 8 )
+5/autotile/spacing = 1
+5/autotile/occluder_map = [  ]
+5/autotile/navpoly_map = [  ]
+5/autotile/priority_map = [  ]
+5/autotile/z_index_map = [  ]
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 22.0
-height = 38.0
+radius = 16.0
+height = 12.0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 225 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 461.5 )
 
 [node name="main" type="Node2D"]
 
-[node name="Floor" type="Sprite" parent="."]
-self_modulate = Color( 0.91, 0.91, 0.91, 1 )
-position = Vector2( 516.5, 303 )
-scale = Vector2( 2.27093, 1.61579 )
-texture = ExtResource( 1 )
+[node name="Door" type="Sprite" parent="."]
+position = Vector2( 671, 54 )
+scale = Vector2( 4.60937, 4.60937 )
+texture = SubResource( 3 )
+
+[node name="RoomTileMap" type="TileMap" parent="."]
+scale = Vector2( 8, 8 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 2, 8, 0, 2, 9, 0, 3, 11, 0, 1, 12, 0, 2, 13, 0, 2, 14, 0, 2, 15, 0, 4, 65536, 0, 65537, 65537, 0, 131074, 65538, 0, 131074, 65539, 0, 131074, 65540, 0, 131074, 65541, 0, 131074, 65542, 0, 131074, 65543, 0, 131074, 65544, 0, 131074, 65545, 0, 327683, 65546, 3, 0, 65547, 0, 327681, 65548, 0, 131074, 65549, 0, 131074, 65550, 0, 131074, 65551, 0, 65539, 131072, 0, 131072, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 3, 0, 131086, 3, 0, 131087, 0, 131076, 196608, 0, 131072, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196615, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196623, 0, 131076, 262144, 0, 131072, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 0, 131076, 327680, 0, 131072, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 327691, 3, 0, 327692, 3, 0, 327693, 3, 0, 327694, 3, 0, 327695, 0, 131076, 393216, 0, 131072, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 0, 131076, 458752, 0, 131072, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458765, 3, 0, 458766, 3, 0, 458767, 0, 131076, 524288, 0, 131072, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 0, 131076, 589824, 0, 262144, 589825, 0, 262146, 589826, 0, 262146, 589827, 0, 262146, 589828, 0, 262146, 589829, 0, 262146, 589830, 0, 262146, 589831, 0, 262146, 589832, 0, 262146, 589833, 0, 262146, 589834, 0, 262146, 589835, 0, 262146, 589836, 0, 262146, 589837, 0, 262146, 589838, 0, 262146, 589839, 0, 262148 )
+
+[node name="Floor" type="Node2D" parent="."]
+self_modulate = Color( 0.77, 0.77, 0.77, 1 )
+position = Vector2( 464, 439 )
 
 [node name="GridContainer" type="GridContainer" parent="Floor"]
-margin_left = -225.238
-margin_top = -186.905
-margin_right = 158.762
-margin_bottom = 188.095
+visible = false
+margin_left = -399.0
+margin_top = -312.0
+margin_right = 496.0
+margin_bottom = 137.0
 rect_min_size = Vector2( 50, 50 )
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
-columns = 8
+columns = 7
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="FloorSlot" type="TextureRect" parent="Floor/GridContainer"]
-margin_right = 48.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot2" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 48.0
-margin_right = 96.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot3" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 96.0
-margin_right = 144.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 256.0
+margin_right = 384.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot4" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 144.0
-margin_right = 192.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot5" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 192.0
-margin_right = 240.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 512.0
+margin_right = 640.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot6" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 240.0
-margin_right = 288.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 640.0
+margin_right = 768.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot7" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 288.0
-margin_right = 336.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 768.0
+margin_right = 896.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot8" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 336.0
-margin_right = 384.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_top = 128.0
+margin_right = 128.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot9" type="TextureRect" parent="Floor/GridContainer"]
-margin_top = 64.0
-margin_right = 48.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 256.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot10" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 48.0
-margin_top = 64.0
-margin_right = 96.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot11" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 96.0
-margin_top = 64.0
-margin_right = 144.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 384.0
+margin_top = 128.0
+margin_right = 512.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot12" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 144.0
-margin_top = 64.0
-margin_right = 192.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 512.0
+margin_top = 128.0
+margin_right = 640.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot13" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 192.0
-margin_top = 64.0
-margin_right = 240.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 640.0
+margin_top = 128.0
+margin_right = 768.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot14" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 240.0
-margin_top = 64.0
-margin_right = 288.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 768.0
+margin_top = 128.0
+margin_right = 896.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot15" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 288.0
-margin_top = 64.0
-margin_right = 336.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_top = 256.0
+margin_right = 128.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot16" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 336.0
-margin_top = 64.0
-margin_right = 384.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 128.0
+margin_top = 256.0
+margin_right = 256.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot17" type="TextureRect" parent="Floor/GridContainer"]
-margin_top = 128.0
-margin_right = 48.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 256.0
+margin_top = 256.0
+margin_right = 384.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot18" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 48.0
-margin_top = 128.0
-margin_right = 96.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 384.0
+margin_top = 256.0
+margin_right = 512.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot19" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 96.0
-margin_top = 128.0
-margin_right = 144.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 512.0
+margin_top = 256.0
+margin_right = 640.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot20" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 144.0
-margin_top = 128.0
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 640.0
+margin_top = 256.0
+margin_right = 768.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="FloorSlot21" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 192.0
-margin_top = 128.0
-margin_right = 240.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot22" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 240.0
-margin_top = 128.0
-margin_right = 288.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot23" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 288.0
-margin_top = 128.0
-margin_right = 336.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot24" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 336.0
-margin_top = 128.0
-margin_right = 384.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot25" type="TextureRect" parent="Floor/GridContainer"]
-margin_top = 192.0
-margin_right = 48.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot26" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 48.0
-margin_top = 192.0
-margin_right = 96.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot27" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 96.0
-margin_top = 192.0
-margin_right = 144.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot28" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 144.0
-margin_top = 192.0
-margin_right = 192.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot29" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 192.0
-margin_top = 192.0
-margin_right = 240.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot30" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 240.0
-margin_top = 192.0
-margin_right = 288.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot31" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 288.0
-margin_top = 192.0
-margin_right = 336.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot32" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 336.0
-margin_top = 192.0
-margin_right = 384.0
-margin_bottom = 256.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot33" type="TextureRect" parent="Floor/GridContainer"]
+self_modulate = Color( 0.91, 0.91, 0.91, 0.658824 )
+margin_left = 768.0
 margin_top = 256.0
-margin_right = 48.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot34" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 48.0
-margin_top = 256.0
-margin_right = 96.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot35" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 96.0
-margin_top = 256.0
-margin_right = 144.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot36" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 144.0
-margin_top = 256.0
-margin_right = 192.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot37" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 192.0
-margin_top = 256.0
-margin_right = 240.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot38" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 240.0
-margin_top = 256.0
-margin_right = 288.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot39" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 288.0
-margin_top = 256.0
-margin_right = 336.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot40" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 336.0
-margin_top = 256.0
-margin_right = 384.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot41" type="TextureRect" parent="Floor/GridContainer"]
-margin_top = 320.0
-margin_right = 48.0
+margin_right = 896.0
 margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
+rect_min_size = Vector2( 128, 128 )
 texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot42" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 48.0
-margin_top = 320.0
-margin_right = 96.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot43" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 96.0
-margin_top = 320.0
-margin_right = 144.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot44" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 144.0
-margin_top = 320.0
-margin_right = 192.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot45" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 192.0
-margin_top = 320.0
-margin_right = 240.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot46" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 240.0
-margin_top = 320.0
-margin_right = 288.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot47" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 288.0
-margin_top = 320.0
-margin_right = 336.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
-script = ExtResource( 6 )
-
-[node name="FloorSlot48" type="TextureRect" parent="Floor/GridContainer"]
-margin_left = 336.0
-margin_top = 320.0
-margin_right = 384.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 48, 64 )
-texture = ExtResource( 4 )
-expand = true
+stretch_mode = 1
 script = ExtResource( 6 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( -84, -272 )
+position = Vector2( -198, -330 )
+scale = Vector2( 1.4, 1.4 )
+z_index = 20
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 262, 318 )
-shape = SubResource( 1 )
-
 [node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 267, 319 )
-scale = Vector2( 9.6, 9.6 )
+position = Vector2( 262, 319 )
+scale = Vector2( 3.3375, 3.3375 )
 texture = ExtResource( 3 )
 
-[node name="Mail" parent="." instance=ExtResource( 5 )]
-position = Vector2( 70, 72 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 262, 343 )
+scale = Vector2( 1, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Mail" type="Sprite" parent="."]
+position = Vector2( 672, 94 )
 scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Mail"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 9.0
+margin_bottom = 27.0
+rect_scale = Vector2( 1, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MailInv" type="TextureRect" parent="Mail"]
 visible = false
@@ -527,6 +452,7 @@ margin_right = 43.0
 margin_bottom = 76.0
 texture = ExtResource( 7 )
 expand = true
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -543,48 +469,66 @@ __meta__ = {
 }
 
 [node name="InventorySlotDisplay" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 20.0
 margin_bottom = 21.0
 
 [node name="InventorySlotDisplay2" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 20.0
 margin_right = 40.0
 margin_bottom = 21.0
 
 [node name="InventorySlotDisplay3" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 40.0
 margin_right = 60.0
 margin_bottom = 21.0
 
 [node name="InventorySlotDisplay4" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 21.0
 margin_right = 20.0
 margin_bottom = 42.0
 
 [node name="InventorySlotDisplay5" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 21.0
 margin_right = 40.0
 margin_bottom = 42.0
 
 [node name="InventorySlotDisplay6" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 40.0
 margin_top = 21.0
 margin_right = 60.0
 margin_bottom = 42.0
 
 [node name="InventorySlotDisplay7" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 42.0
 margin_right = 20.0
 margin_bottom = 63.0
 
 [node name="InventorySlotDisplay8" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 42.0
 margin_right = 40.0
 margin_bottom = 63.0
 
 [node name="InventorySlotDisplay9" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 40.0
 margin_top = 42.0
 margin_right = 60.0
@@ -595,51 +539,98 @@ position = Vector2( 2, 2 )
 scale = Vector2( 1.4, 1.4 )
 script = ExtResource( 8 )
 
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2( 54, 114 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2( 0, 222 )
+shape = SubResource( 4 )
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2( 970, 112 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2( 0, 231 )
+shape = SubResource( 4 )
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2( 970, 88 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+position = Vector2( -3, 452 )
+shape = SubResource( 5 )
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2( 964, 575 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+position = Vector2( 6, 452 )
+shape = SubResource( 5 )
+
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot" to="Floor/GridContainer/FloorSlot" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot" to="Floor/GridContainer/FloorSlot" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot" to="Floor/GridContainer/FloorSlot" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot2" to="Floor/GridContainer/FloorSlot2" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot2" to="Floor/GridContainer/FloorSlot2" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot2" to="Floor/GridContainer/FloorSlot2" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot3" to="Floor/GridContainer/FloorSlot3" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot3" to="Floor/GridContainer/FloorSlot3" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot3" to="Floor/GridContainer/FloorSlot3" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot4" to="Floor/GridContainer/FloorSlot4" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot4" to="Floor/GridContainer/FloorSlot4" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot4" to="Floor/GridContainer/FloorSlot4" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot5" to="Floor/GridContainer/FloorSlot5" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot5" to="Floor/GridContainer/FloorSlot5" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot5" to="Floor/GridContainer/FloorSlot5" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot6" to="Floor/GridContainer/FloorSlot6" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot6" to="Floor/GridContainer/FloorSlot6" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot6" to="Floor/GridContainer/FloorSlot6" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot7" to="Floor/GridContainer/FloorSlot7" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot7" to="Floor/GridContainer/FloorSlot7" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot7" to="Floor/GridContainer/FloorSlot7" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot8" to="Floor/GridContainer/FloorSlot8" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot8" to="Floor/GridContainer/FloorSlot8" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot8" to="Floor/GridContainer/FloorSlot8" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot9" to="Floor/GridContainer/FloorSlot9" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot9" to="Floor/GridContainer/FloorSlot9" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot9" to="Floor/GridContainer/FloorSlot9" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot10" to="Floor/GridContainer/FloorSlot10" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot10" to="Floor/GridContainer/FloorSlot10" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot10" to="Floor/GridContainer/FloorSlot10" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot11" to="Floor/GridContainer/FloorSlot11" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot11" to="Floor/GridContainer/FloorSlot11" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot11" to="Floor/GridContainer/FloorSlot11" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot12" to="Floor/GridContainer/FloorSlot12" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot12" to="Floor/GridContainer/FloorSlot12" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot12" to="Floor/GridContainer/FloorSlot12" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot13" to="Floor/GridContainer/FloorSlot13" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot13" to="Floor/GridContainer/FloorSlot13" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot13" to="Floor/GridContainer/FloorSlot13" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot14" to="Floor/GridContainer/FloorSlot14" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot14" to="Floor/GridContainer/FloorSlot14" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot14" to="Floor/GridContainer/FloorSlot14" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot15" to="Floor/GridContainer/FloorSlot15" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot15" to="Floor/GridContainer/FloorSlot15" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot15" to="Floor/GridContainer/FloorSlot15" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot16" to="Floor/GridContainer/FloorSlot16" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot16" to="Floor/GridContainer/FloorSlot16" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot16" to="Floor/GridContainer/FloorSlot16" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot17" to="Floor/GridContainer/FloorSlot17" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot17" to="Floor/GridContainer/FloorSlot17" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot17" to="Floor/GridContainer/FloorSlot17" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot18" to="Floor/GridContainer/FloorSlot18" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot18" to="Floor/GridContainer/FloorSlot18" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot18" to="Floor/GridContainer/FloorSlot18" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot19" to="Floor/GridContainer/FloorSlot19" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot19" to="Floor/GridContainer/FloorSlot19" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot19" to="Floor/GridContainer/FloorSlot19" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot20" to="Floor/GridContainer/FloorSlot20" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot20" to="Floor/GridContainer/FloorSlot20" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot20" to="Floor/GridContainer/FloorSlot20" method="_on_FloorSlot_mouse_exited"]
 [connection signal="gui_input" from="Floor/GridContainer/FloorSlot21" to="Floor/GridContainer/FloorSlot21" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot22" to="Floor/GridContainer/FloorSlot22" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot23" to="Floor/GridContainer/FloorSlot23" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot24" to="Floor/GridContainer/FloorSlot24" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot25" to="Floor/GridContainer/FloorSlot25" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot26" to="Floor/GridContainer/FloorSlot26" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot27" to="Floor/GridContainer/FloorSlot27" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot28" to="Floor/GridContainer/FloorSlot28" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot29" to="Floor/GridContainer/FloorSlot29" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot30" to="Floor/GridContainer/FloorSlot30" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot31" to="Floor/GridContainer/FloorSlot31" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot32" to="Floor/GridContainer/FloorSlot32" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot33" to="Floor/GridContainer/FloorSlot33" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot34" to="Floor/GridContainer/FloorSlot34" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot35" to="Floor/GridContainer/FloorSlot35" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot36" to="Floor/GridContainer/FloorSlot36" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot37" to="Floor/GridContainer/FloorSlot37" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot38" to="Floor/GridContainer/FloorSlot38" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot39" to="Floor/GridContainer/FloorSlot39" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot40" to="Floor/GridContainer/FloorSlot40" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot41" to="Floor/GridContainer/FloorSlot41" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot42" to="Floor/GridContainer/FloorSlot42" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot43" to="Floor/GridContainer/FloorSlot43" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot44" to="Floor/GridContainer/FloorSlot44" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot45" to="Floor/GridContainer/FloorSlot45" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot46" to="Floor/GridContainer/FloorSlot46" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot47" to="Floor/GridContainer/FloorSlot47" method="_on_FloorSlot_gui_input"]
-[connection signal="gui_input" from="Floor/GridContainer/FloorSlot48" to="Floor/GridContainer/FloorSlot48" method="_on_FloorSlot_gui_input"]
+[connection signal="mouse_entered" from="Floor/GridContainer/FloorSlot21" to="Floor/GridContainer/FloorSlot21" method="_on_FloorSlot_mouse_entered"]
+[connection signal="mouse_exited" from="Floor/GridContainer/FloorSlot21" to="Floor/GridContainer/FloorSlot21" method="_on_FloorSlot_mouse_exited"]
+[connection signal="pressed" from="Mail/Button" to="Floor/GridContainer" method="_on_Button_pressed"]
+[connection signal="pressed" from="Mail/Button" to="Mail/MailInv" method="_on_Button_pressed"]
