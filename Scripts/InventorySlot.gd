@@ -6,12 +6,24 @@ onready var itemTextureRect = $ItemTextureRect
 onready var itemSlotTexture = $ItemSlotTexture
 onready var mouse = get_node("../../../../Mouse")
 
-var inventory = preload("res://Inventory.tres")
+enum inventoryResourceNum {
+	mailInventory,
+	closetInventory
+}
+export(inventoryResourceNum) var inventoryResource
+var mailInventory = preload("res://Inventory.tres")
+var closetInventory = preload("res://ClosetInventory.tres")
+var resourceArray = [mailInventory, closetInventory]
+
+var inventory
 
 var emptySlot = preload("res://Inventory/UI Box faded20x20.png")
 var filledSlot = preload("res://Inventory/UI Box20x20.png")
 
 var previous_item = null
+
+func _ready():
+	inventory = resourceArray[inventoryResource]
 
 func display_item(item):
 	if item is Item:
@@ -29,7 +41,6 @@ func click_pick_up():
 	inventory.set_item(get_index(), previous_item)
 	
 	if item == null:
-		print("item null")
 		inventory.set_item(get_index(), mouse.held_item)
 		emit_signal("item_clicked", null)
 		
@@ -43,5 +54,4 @@ func _on_InventorySlotDisplay_gui_input(event):
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			click_pick_up()
 			
-			print(get_index())
 

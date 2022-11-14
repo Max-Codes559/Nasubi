@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/item.gd" type="Script" id=1]
+[ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 18, 32, 15 )
+
+[resource]
+script = ExtResource( 1 )
+name = "Woodrgrain Table"
+texture = SubResource( 1 )
+itemType = "Furniture"
+size = "1x2"

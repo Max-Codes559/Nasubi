@@ -23,3 +23,10 @@ texture = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 13.5 )
 shape = SubResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color( 1, 0, 0, 0 )
+margin_right = 128.0
+margin_bottom = 128.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

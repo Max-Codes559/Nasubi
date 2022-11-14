@@ -1,6 +1,6 @@
 extends TextureRect
 
-func _on_Button_pressed():
+func _on_Button2_pressed():
 	if visible == true:
 		visible = false
 		
