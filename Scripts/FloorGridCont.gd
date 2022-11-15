@@ -7,6 +7,7 @@ onready var Mouse = get_node("../../Mouse")
 func close_grid():
 	if visible == true and MailInv.visible == false and ClosetInv.visible == false:
 		visible = false
+		#closes grid when player places item on mouse and both inv are closed
 
 func _ready():
 	var  FloorSlots = get_children()

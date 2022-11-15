@@ -14,6 +14,7 @@ var slotNumber
 var itemData
 
 func get_resource_data(item):
+	#Sets up furniture scene according to item resource
 	if dataRecieved == false:
 		itemData = item
 		sprite.texture = item.texture
@@ -45,6 +46,7 @@ func get_resource_data(item):
 		dataRecieved = true
 
 func transfer_node():
+	#transfers node to Ysort Floor, gets ref to mouse, records slot number
 	var slotPosition = global_position
 	slotNumber = get_parent().get_index()
 	get_parent().remove_child(self)
@@ -59,7 +61,7 @@ func _ready():
 		transfer_node()
 
 func _on_Button_pressed():
-	print("button pressed")
+	#puts item back on mouse
 	if dataRecieved == true and mouse.held_item == null and get_parent().get_node("FloorGrid").visible:
 		emit_signal("unplace_item", itemData, slotNumber)
 		queue_free()

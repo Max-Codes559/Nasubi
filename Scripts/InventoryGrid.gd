@@ -1,7 +1,6 @@
 extends GridContainer
-
+#node tells slots to update visually in inventory
 var inventory = preload("res://Inventory.tres")
-#refs Inventory resource
 
 func _ready():
 	inventory.connect("items_changed", self, "on_items_changed")
@@ -23,6 +22,3 @@ func on_items_changed(indexes):
 	for item_index in indexes:
 		update_inventory_slot_display(item_index)
 
-
-func _on_Button_pressed():
-	pass # Replace with function body.

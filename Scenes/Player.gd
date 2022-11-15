@@ -4,7 +4,7 @@ export (int) var speed = 200
 
 var velocity = Vector2.ZERO
 
-func get_input():
+func basic_movement():
 	velocity = Vector2()
 	if Input.is_action_pressed("right"):
 		velocity.x += 1
@@ -15,6 +15,9 @@ func get_input():
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
+
+func get_input():
+	basic_movement()
 	
 func _physics_process(delta):
 	get_input()

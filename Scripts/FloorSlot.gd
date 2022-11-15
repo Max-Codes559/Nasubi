@@ -14,6 +14,7 @@ var adjacentSlot = null
 var selectUI
 
 func _on_FloorSlot_gui_input(event):
+	#Attempts to place held item on floor
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			if Mouse.held_item != null:
@@ -42,13 +43,12 @@ func _on_FloorSlot_gui_input(event):
 						Furniture.connect("unplace_item", self, "clear_slot")
 						
 func clear_slot(item, slotNumber):
-	print("FloorSlot recieves unplaced signal")
+	#clears slot if furniture is picked up
 	if slotNumber == get_index():
 		if placedFurniture.size == "1x2":
 			adjacentSlot.placedFurniture = null
 		placedFurniture = null
 		emit_signal("item_unplaced", item, slotNumber)
-		print("unplace signal sent from FloorSlot")
 
 func _on_FloorSlot_mouse_entered():
 	selectUI = Selector.instance()

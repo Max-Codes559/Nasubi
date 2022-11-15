@@ -11,6 +11,7 @@ enum inventoryResourceNum {
 	closetInventory
 }
 export(inventoryResourceNum) var inventoryResource
+
 var mailInventory = preload("res://Inventory.tres")
 var closetInventory = preload("res://ClosetInventory.tres")
 var resourceArray = [mailInventory, closetInventory]
@@ -24,6 +25,7 @@ var previous_item = null
 
 func _ready():
 	inventory = resourceArray[inventoryResource]
+	# sets correct inventory resource ref
 
 func display_item(item):
 	if item is Item:
