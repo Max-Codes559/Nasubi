@@ -5,3 +5,4 @@ export(String) var name = ""
 export(Texture) var texture
 export(String, "Furniture", "Wallet", "Food", "Clothing") var itemType
 export(String, "1x1", "1x2", "2x2", "tall", "rug") var size
+export(String, "hat", "shirt", "pants", "shoes") var clothingType

@@ -13,3 +13,4 @@ name = "Fireplace"
 texture = SubResource( 1 )
 itemType = "Furniture"
 size = "tall"
+clothingType = ""

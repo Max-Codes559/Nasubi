@@ -23,7 +23,7 @@ func _on_FloorSlot_gui_input(event):
 					if Mouse.held_item.size == "1x2":
 						adjacentSlot = Grid.get_child(get_index() + 1)
 						
-						if adjacentSlot.placedFurniture == null and (get_index() + 1) % 7 != 0:
+						if adjacentSlot.placedFurniture == null and (get_index() + 1) % get_parent().columns != 0:
 							placedFurniture = Mouse.held_item
 							var Furniture = FurnitureScene.instance()
 							add_child(Furniture)

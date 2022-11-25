@@ -20,14 +20,15 @@ func get_resource_data(item):
 		sprite.texture = item.texture
 	
 		if item.size == "1x1":
-			collisionBody.position = slot.rect_size / 2
+			collisionBody.position.x = slot.rect_size.x / 2
+			collisionBody.position.y = slot.rect_size.y / 1.5
 			sprite.position = slot.rect_size / 2
 		
 		elif item.size == "1x2":
 			collisionBody.scale *= Vector2(3.6,2)
 			collisionBody.position.x = slot.rect_size.x
-			collisionBody.position.y = slot.rect_size.y / 2
-			sprite.position.x = slot.rect_size.x
+			collisionBody.position.y = slot.rect_size.y / 1.5
+			sprite.position.x = slot.rect_size.x + 12
 			sprite.position.y = slot.rect_size.y / 2
 			button.rect_size.x *= 2
 		

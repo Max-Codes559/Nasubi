@@ -9,12 +9,20 @@ onready var mouse = get_node("../../../../Mouse")
 enum inventoryResourceNum {
 	mailInventory,
 	closetInventory
+	clothingInventory
 }
 export(inventoryResourceNum) var inventoryResource
 
+export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType1
+export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType2
+export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType3
+
+var rejectedTypes = [rejectType1, rejectType2, rejectType3]
+
 var mailInventory = preload("res://Inventory.tres")
 var closetInventory = preload("res://ClosetInventory.tres")
-var resourceArray = [mailInventory, closetInventory]
+var clothingInventory = preload("res://Clothing.tres")
+var resourceArray = [mailInventory, closetInventory,clothingInventory]
 
 var inventory
 

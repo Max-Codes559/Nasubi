@@ -9,3 +9,4 @@ name = "Bean Bag"
 texture = ExtResource( 2 )
 itemType = "Furniture"
 size = "1x1"
+clothingType = ""

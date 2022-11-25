@@ -13,3 +13,4 @@ name = "Small Brown Table"
 texture = SubResource( 1 )
 itemType = "Furniture"
 size = "1x1"
+clothingType = ""

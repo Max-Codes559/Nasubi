@@ -13,3 +13,4 @@ name = "Green Chair"
 texture = SubResource( 1 )
 itemType = "Furniture"
 size = "1x1"
+clothingType = ""
