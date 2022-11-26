@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scripts/ClosetInvGrid.gd" type="Script" id=14]
 [ext_resource path="res://UI/DummySlot.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/E-menu.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/InvSlotV2.gd" type="Script" id=17]
 
 [sub_resource type="TileSet" id=2]
 0/name = "floor and walls spritesheet.png 0"
@@ -409,10 +410,12 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 20.0
 margin_bottom = 23.0
+script = ExtResource( 17 )
 inventoryResource = 2
-rejectType1 = "Furniture"
-rejectType2 = "Wallet"
-rejectType3 = "Food"
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = ""
 
 [node name="ShirtSlot" parent="Floor/Player/E-menu" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -420,10 +423,12 @@ anchor_bottom = 0.0
 margin_top = 23.0
 margin_right = 20.0
 margin_bottom = 46.0
+script = ExtResource( 17 )
 inventoryResource = 2
-rejectType1 = "Furniture"
-rejectType2 = "Wallet"
-rejectType3 = "Food"
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = ""
 
 [node name="PantsSlot" parent="Floor/Player/E-menu" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -431,10 +436,12 @@ anchor_bottom = 0.0
 margin_top = 46.0
 margin_right = 20.0
 margin_bottom = 69.0
+script = ExtResource( 17 )
 inventoryResource = 2
-rejectType1 = "Furniture"
-rejectType2 = "Wallet"
-rejectType3 = "Food"
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = ""
 
 [node name="ShoesSlot" parent="Floor/Player/E-menu" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -442,10 +449,12 @@ anchor_bottom = 0.0
 margin_top = 69.0
 margin_right = 20.0
 margin_bottom = 92.0
+script = ExtResource( 17 )
 inventoryResource = 2
-rejectType1 = "Furniture"
-rejectType2 = "Wallet"
-rejectType3 = "Food"
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = "Clothing"
 
 [node name="Closet" type="Sprite" parent="."]
 position = Vector2( 26, 310 )
@@ -491,7 +500,12 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 20.0
 margin_bottom = 20.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay11" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -499,7 +513,12 @@ anchor_bottom = 0.0
 margin_left = 20.0
 margin_right = 40.0
 margin_bottom = 20.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay12" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -507,7 +526,12 @@ anchor_bottom = 0.0
 margin_left = 40.0
 margin_right = 60.0
 margin_bottom = 20.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay13" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -515,7 +539,12 @@ anchor_bottom = 0.0
 margin_top = 22.0
 margin_right = 20.0
 margin_bottom = 42.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay14" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -524,7 +553,12 @@ margin_left = 20.0
 margin_top = 22.0
 margin_right = 40.0
 margin_bottom = 42.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay15" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -533,7 +567,12 @@ margin_left = 40.0
 margin_top = 22.0
 margin_right = 60.0
 margin_bottom = 42.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay16" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -541,7 +580,12 @@ anchor_bottom = 0.0
 margin_top = 44.0
 margin_right = 20.0
 margin_bottom = 64.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay17" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -550,7 +594,12 @@ margin_left = 20.0
 margin_top = 44.0
 margin_right = 40.0
 margin_bottom = 64.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay18" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -559,7 +608,12 @@ margin_left = 40.0
 margin_top = 44.0
 margin_right = 60.0
 margin_bottom = 64.0
+script = ExtResource( 17 )
 inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="Mail" type="Sprite" parent="."]
 position = Vector2( 672, 94 )
@@ -602,6 +656,11 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 20.0
 margin_bottom = 20.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay2" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -609,6 +668,11 @@ anchor_bottom = 0.0
 margin_left = 20.0
 margin_right = 40.0
 margin_bottom = 20.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay3" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -616,6 +680,11 @@ anchor_bottom = 0.0
 margin_left = 40.0
 margin_right = 60.0
 margin_bottom = 20.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay4" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -623,6 +692,11 @@ anchor_bottom = 0.0
 margin_top = 22.0
 margin_right = 20.0
 margin_bottom = 42.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay5" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -631,6 +705,11 @@ margin_left = 20.0
 margin_top = 22.0
 margin_right = 40.0
 margin_bottom = 42.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay6" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -639,6 +718,11 @@ margin_left = 40.0
 margin_top = 22.0
 margin_right = 60.0
 margin_bottom = 42.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay7" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -646,6 +730,11 @@ anchor_bottom = 0.0
 margin_top = 44.0
 margin_right = 20.0
 margin_bottom = 64.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay8" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -654,6 +743,11 @@ margin_left = 20.0
 margin_top = 44.0
 margin_right = 40.0
 margin_bottom = 64.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="InventorySlotDisplay9" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
 anchor_right = 0.0
@@ -662,6 +756,11 @@ margin_left = 40.0
 margin_top = 44.0
 margin_right = 60.0
 margin_bottom = 64.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="Mouse" type="Sprite" parent="."]
 position = Vector2( 2, 2 )

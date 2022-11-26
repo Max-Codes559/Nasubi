@@ -13,30 +13,8 @@ const closetInventory = preload("res://ClosetInventory.tres")
 const clothingInventory = preload("res://Clothing.tres")
 const resourceArray = [mailInventory, closetInventory,clothingInventory]
 
-enum inventoryResourceNum {
-	mailInventory,
-	closetInventory
-	clothingInventory
-}
-export(inventoryResourceNum) var inventoryResource
-
-export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType1
-export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType2
-export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType3
-var rejectedTypes = [rejectType1, rejectType2, rejectType3]
-
 var inventory
 
-func display_item(item, itemTextureRect, itemSlotTexture):
-	if item is Item:
-		#Confirms that item is not null
-		itemTextureRect.texture = item.texture
-		#Sets connected texture rect to texture of Item resource
-		itemSlotTexture.texture = filledSlot
-	else:
-		itemSlotTexture.texture = emptySlot
-		itemTextureRect.texture = null
-	
 func click_pick_up(mouse):
 	previous_item = mouse.held_item
 	var item = inventory.remove_item(get_index())
