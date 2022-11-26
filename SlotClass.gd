@@ -1,10 +1,17 @@
-extends CenterContainer
+extends Control
+class_name Slot
 
 signal item_clicked(item)
 
-onready var itemTextureRect = $ItemTextureRect
-onready var itemSlotTexture = $ItemSlotTexture
-onready var mouse = get_node("../../../../Mouse")
+const emptySlot = preload("res://Inventory/UI Box faded20x20.png")
+const filledSlot = preload("res://Inventory/UI Box20x20.png")
+
+var previous_item = null
+
+const mailInventory = preload("res://Inventory.tres")
+const closetInventory = preload("res://ClosetInventory.tres")
+const clothingInventory = preload("res://Clothing.tres")
+const resourceArray = [mailInventory, closetInventory,clothingInventory]
 
 enum inventoryResourceNum {
 	mailInventory,
@@ -16,26 +23,11 @@ export(inventoryResourceNum) var inventoryResource
 export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType1
 export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType2
 export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType3
-
 var rejectedTypes = [rejectType1, rejectType2, rejectType3]
-
-const mailInventory = preload("res://Inventory.tres")
-const closetInventory = preload("res://ClosetInventory.tres")
-const clothingInventory = preload("res://Clothing.tres")
-const resourceArray = [mailInventory, closetInventory, clothingInventory]
 
 var inventory
 
-var emptySlot = preload("res://Inventory/UI Box faded20x20.png")
-var filledSlot = preload("res://Inventory/UI Box20x20.png")
-
-var previous_item = null
-
-func _ready():
-	inventory = resourceArray[inventoryResource]
-	# sets correct inventory resource ref
-
-func display_item(item):
+func display_item(item, itemTextureRect, itemSlotTexture):
 	if item is Item:
 		#Confirms that item is not null
 		itemTextureRect.texture = item.texture
@@ -45,7 +37,7 @@ func display_item(item):
 		itemSlotTexture.texture = emptySlot
 		itemTextureRect.texture = null
 	
-func click_pick_up():
+func click_pick_up(mouse):
 	previous_item = mouse.held_item
 	var item = inventory.remove_item(get_index())
 	inventory.set_item(get_index(), previous_item)
@@ -57,11 +49,3 @@ func click_pick_up():
 	elif item != null:
 		emit_signal("item_clicked", item)
 		#when clicking on item slot in inventory that is full, sends signal to mouse
-	
-	
-func _on_InventorySlotDisplay_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
-			click_pick_up()
-			
-
