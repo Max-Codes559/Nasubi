@@ -36,10 +36,6 @@ func _ready():
 func _on_InventorySlotDisplay_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			if mouse.held_item != null:
-				print("itemType = ", mouse.held_item.itemType)
 			if mouse.held_item == null or acceptedTypes.has(mouse.held_item.itemType):
-			#if mouse.held_item == null or mouse.held_item.itemType == "Clothing":
 				click_pick_up(mouse)
-				print("click_pick_up executed")
 

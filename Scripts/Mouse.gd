@@ -1,5 +1,8 @@
 extends Sprite
 
+signal furniture_selected
+signal furniture_placed
+
 onready var InventorySlots = get_node("../Mail/MailInv/InventoryDisplay").get_children()
 onready var ClosetSlots = get_node("../Closet/ClosetInv/ClosetInvGrid").get_children()
 onready var ClothingSlots = get_node("../Floor/Player/E-menu").get_children()
@@ -9,15 +12,25 @@ var held_item = null
 
 func update_item(item):
 	held_item = item
+	
 	if item != null:
 		texture = item.texture
-	if item == null:
+		if held_item.itemType == "Furniture":
+			emit_signal("furniture_selected")
+
+	elif item == null:
 		texture = null
+		emit_signal("furniture_placed")
 		
 func update_item_from_floor(item, _slotNumber):
 	held_item = item
+	
 	if item != null:
 		texture = item.texture
+		if held_item.itemType == "Furniture":
+			emit_signal("furniture_selected")
+			print("furniture selected")
+			
 	if item == null:
 		texture = null
 		
