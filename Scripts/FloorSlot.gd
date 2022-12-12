@@ -1,6 +1,6 @@
 extends TextureRect
 
-signal item_unplaced(item, slotNumber)
+signal item_unplaced(item)
 signal item_placed
 signal furniture_type(item)
 
@@ -48,7 +48,7 @@ func clear_slot(item, slotNumber):
 		if placedFurniture.size == "1x2":
 			adjacentSlot.placedFurniture = null
 		placedFurniture = null
-		emit_signal("item_unplaced", item, slotNumber)
+		emit_signal("item_unplaced", item)
 
 func _on_FloorSlot_mouse_entered():
 	selectUI = Selector.instance()

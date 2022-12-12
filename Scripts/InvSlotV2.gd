@@ -31,7 +31,6 @@ func display_item(item):
 func _ready():
 	acceptedTypes = [acceptType1, acceptType2, acceptType3, acceptType4]
 	inventory = resourceArray[inventoryResource]
-	print(acceptedTypes)
 
 func _on_InventorySlotDisplay_gui_input(event):
 	if event is InputEventMouseButton:

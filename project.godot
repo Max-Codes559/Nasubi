@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
-"path": "res://Scripts/inventory.gd"
+"path": "res://Scripts/classes/inventory.gd"
 }, {
 "base": "Resource",
 "class": "Item",
 "language": "GDScript",
-"path": "res://Scripts/item.gd"
+"path": "res://Scripts/classes/item.gd"
 }, {
 "base": "Control",
 "class": "Slot",
 "language": "GDScript",
-"path": "res://SlotClass.gd"
+"path": "res://Scripts/classes/SlotClass.gd"
 } ]
 _global_script_class_icons={
 "Inventory": "",
@@ -35,6 +35,10 @@ _global_script_class_icons={
 config/name="Nasubi V1"
 run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://Scripts/global.gd"
 
 [input]
 
@@ -61,6 +65,11 @@ down={
 E-menu={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+esc={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 

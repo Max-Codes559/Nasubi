@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/inventory.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/classes/inventory.gd" type="Script" id=1]
 [ext_resource path="res://Items/Item Resources/Clothing/TestHat.tres" type="Resource" id=2]
 [ext_resource path="res://Items/Item Resources/Clothing/TestPants.tres" type="Resource" id=3]
 [ext_resource path="res://Items/Item Resources/Clothing/TestShirt.tres" type="Resource" id=4]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://UI/DummySlot.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/E-menu.gd" type="Script" id=16]
 [ext_resource path="res://Scripts/InvSlotV2.gd" type="Script" id=17]
+[ext_resource path="res://Player/Farmer1.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/MagazineOpen.gd" type="Script" id=19]
 
 [sub_resource type="TileSet" id=2]
 0/name = "floor and walls spritesheet.png 0"
@@ -152,10 +154,6 @@
 atlas = ExtResource( 1 )
 region = Rect2( 595, 103, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 479, 105, 9, 13 )
-
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 230.5 )
 
@@ -179,14 +177,6 @@ texture = SubResource( 3 )
 [node name="Floor" type="YSort" parent="."]
 self_modulate = Color( 0.77, 0.77, 0.77, 1 )
 position = Vector2( 464, 439 )
-
-[node name="Fake chair" type="Sprite" parent="Floor"]
-visible = false
-position = Vector2( 6, -125 )
-scale = Vector2( 12.0556, 12.0556 )
-z_index = 4
-z_as_relative = false
-texture = SubResource( 6 )
 
 [node name="FloorGrid" type="GridContainer" parent="Floor"]
 modulate = Color( 1, 1, 1, 0 )
@@ -396,6 +386,7 @@ script = ExtResource( 15 )
 position = Vector2( 0, 0 )
 
 [node name="E-menu" type="VBoxContainer" parent="Floor/Player"]
+visible = false
 margin_left = 38.5714
 margin_top = -13.5714
 margin_right = 58.5714
@@ -800,6 +791,15 @@ rotation = 1.5708
 position = Vector2( 19.0016, 452 )
 shape = SubResource( 5 )
 
+[node name="Magazine" type="TextureRect" parent="."]
+margin_left = 878.0
+margin_top = 465.0
+margin_right = 987.0
+margin_bottom = 574.0
+texture = ExtResource( 18 )
+expand = true
+script = ExtResource( 19 )
+
 [connection signal="gui_input" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_mouse_entered"]
 [connection signal="mouse_exited" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_mouse_exited"]
@@ -856,3 +856,4 @@ shape = SubResource( 5 )
 [connection signal="mouse_exited" from="Floor/FloorGrid/FloorSlot18" to="Floor/FloorGrid/FloorSlot18" method="_on_FloorSlot_mouse_exited"]
 [connection signal="pressed" from="Closet/Button2" to="Closet/ClosetInv" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Mail/Button" to="Mail/MailInv" method="_on_Button_pressed"]
+[connection signal="gui_input" from="Magazine" to="Magazine" method="_on_Magazine_gui_input"]

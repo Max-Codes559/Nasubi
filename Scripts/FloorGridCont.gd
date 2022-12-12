@@ -17,5 +17,3 @@ func _ready():
 
 	mouse.connect("furniture_selected", self, "open_grid")
 	mouse.connect("furniture_placed", self, "close_grid")
-
-
