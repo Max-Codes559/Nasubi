@@ -1,11 +1,18 @@
 extends TextureRect
 
 onready var Main = $".."
-var MagazineInterface = preload("res://Scenes/MagazineInterface.tscn")
+onready var MagazineInterface = $MagInterface
 
+func _input(event):
+	if Input.is_action_just_pressed("esc"):
+		if MagazineInterface.visible:
+			MagazineInterface.visible = false
 
-func _on_Magazine_gui_input(event):
+func _on_MagazineOpen_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			var NewMag = MagazineInterface.instance()
-			Main.add_child(NewMag)
+			if MagazineInterface.visible:
+				MagazineInterface.visible = false
+		
+			elif not MagazineInterface.visible:
+				MagazineInterface.visible = true

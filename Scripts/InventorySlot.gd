@@ -19,9 +19,9 @@ export(String, "Furniture", "Wallet", "Food", "Clothing") var rejectType3
 
 var rejectedTypes = [rejectType1, rejectType2, rejectType3]
 
-const mailInventory = preload("res://Inventory.tres")
-const closetInventory = preload("res://ClosetInventory.tres")
-const clothingInventory = preload("res://Clothing.tres")
+const mailInventory = preload("res://Resources/Inventory.tres")
+const closetInventory = preload("res://Resources/ClosetInventory.tres")
+const clothingInventory = preload("res://Resources/Clothing.tres")
 const resourceArray = [mailInventory, closetInventory, clothingInventory]
 
 var inventory

@@ -1,6 +1,6 @@
 extends Control
 
-var clothingInv = preload("res://Clothing.tres")
+var clothingInv = preload("res://Resources/Clothing.tres")
 
 func _ready():
 	clothingInv.connect("items_changed", self, "on_items_changed")

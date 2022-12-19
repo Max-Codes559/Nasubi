@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -14,11 +14,15 @@
 [ext_resource path="res://Scripts/FloorGridCont.gd" type="Script" id=12]
 [ext_resource path="res://Room/floor and walls spritesheet.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/ClosetInvGrid.gd" type="Script" id=14]
-[ext_resource path="res://UI/DummySlot.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/DummySlot.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/E-menu.gd" type="Script" id=16]
 [ext_resource path="res://Scripts/InvSlotV2.gd" type="Script" id=17]
 [ext_resource path="res://Player/Farmer1.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/MagazineOpen.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/MagazineInterface.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scripts/MinigameOpen.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/SleepMenu.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=23]
 
 [sub_resource type="TileSet" id=2]
 0/name = "floor and walls spritesheet.png 0"
@@ -161,6 +165,7 @@ extents = Vector2( 10, 230.5 )
 extents = Vector2( 10, 461.5 )
 
 [node name="main" type="Node2D"]
+script = ExtResource( 23 )
 
 [node name="RoomTileMap" type="TileMap" parent="."]
 scale = Vector2( 8, 8 )
@@ -791,14 +796,34 @@ rotation = 1.5708
 position = Vector2( 19.0016, 452 )
 shape = SubResource( 5 )
 
-[node name="Magazine" type="TextureRect" parent="."]
-margin_left = 878.0
-margin_top = 465.0
-margin_right = 987.0
-margin_bottom = 574.0
+[node name="MagazineOpen" type="TextureRect" parent="."]
+margin_left = 881.0
+margin_top = 504.0
+margin_right = 990.0
+margin_bottom = 613.0
+rect_pivot_offset = Vector2( -932, -184 )
 texture = ExtResource( 18 )
 expand = true
 script = ExtResource( 19 )
+
+[node name="MagInterface" parent="MagazineOpen" instance=ExtResource( 20 )]
+visible = false
+position = Vector2( -882, -463 )
+scale = Vector2( 0.870979, 0.870979 )
+
+[node name="MinigameOpen" type="TextureRect" parent="."]
+modulate = Color( 0.509804, 0.129412, 0.129412, 1 )
+margin_left = 69.0
+margin_top = 64.0
+margin_right = 178.0
+margin_bottom = 173.0
+rect_pivot_offset = Vector2( -932, -184 )
+texture = ExtResource( 18 )
+expand = true
+script = ExtResource( 21 )
+
+[node name="SleepMenu" parent="." instance=ExtResource( 22 )]
+visible = false
 
 [connection signal="gui_input" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_mouse_entered"]
@@ -856,4 +881,5 @@ script = ExtResource( 19 )
 [connection signal="mouse_exited" from="Floor/FloorGrid/FloorSlot18" to="Floor/FloorGrid/FloorSlot18" method="_on_FloorSlot_mouse_exited"]
 [connection signal="pressed" from="Closet/Button2" to="Closet/ClosetInv" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Mail/Button" to="Mail/MailInv" method="_on_Button_pressed"]
-[connection signal="gui_input" from="Magazine" to="Magazine" method="_on_Magazine_gui_input"]
+[connection signal="gui_input" from="MagazineOpen" to="MagazineOpen" method="_on_MagazineOpen_gui_input"]
+[connection signal="gui_input" from="MinigameOpen" to="MinigameOpen" method="_on_MinigameOpen_gui_input"]

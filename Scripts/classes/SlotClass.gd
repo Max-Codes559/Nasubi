@@ -8,9 +8,9 @@ const filledSlot = preload("res://Inventory/UI Box20x20.png")
 
 var previous_item = null
 
-const mailInventory = preload("res://Inventory.tres")
-const closetInventory = preload("res://ClosetInventory.tres")
-const clothingInventory = preload("res://Clothing.tres")
+const mailInventory = preload("res://Resources/Inventory.tres")
+const closetInventory = preload("res://Resources/ClosetInventory.tres")
+const clothingInventory = preload("res://Resources/Clothing.tres")
 const resourceArray = [mailInventory, closetInventory,clothingInventory]
 
 var inventory

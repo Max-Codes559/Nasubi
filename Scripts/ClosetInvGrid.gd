@@ -1,6 +1,6 @@
 extends GridContainer
 
-var inventory = preload("res://ClosetInventory.tres")
+var inventory = preload("res://Resources/ClosetInventory.tres")
 #refs Inventory resource
 
 func _ready():
