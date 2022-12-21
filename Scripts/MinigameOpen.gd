@@ -1,6 +1,6 @@
 extends TextureRect
 
-onready var Main = $".."
+onready var Main = $"../.."
 var MiniGameScene = preload("res://Scenes/Minigame.tscn")
 
 func _on_MinigameOpen_gui_input(event):

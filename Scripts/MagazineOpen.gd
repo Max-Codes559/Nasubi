@@ -1,6 +1,6 @@
 extends TextureRect
 
-onready var Main = $".."
+onready var Main = $"../.."
 onready var MagazineInterface = $MagInterface
 
 func _input(event):
