@@ -53,7 +53,7 @@ func transfer_node():
 	get_parent().remove_child(self)
 	ysort.add_child(self)
 	global_position = slotPosition
-	mouse = get_node("../../Mouse")
+	mouse = get_node("../../UILayer/Mouse")
 
 func _ready():
 	if dataRecieved == false:
