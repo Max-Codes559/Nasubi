@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var Emenu = get_node("E-menu")
+onready var Emenu = $"../../UILayer/Menus/PlayerMenus/E-menu"
 
 onready var hat = $Hat
 onready var shirt = $Shirt
@@ -12,10 +12,10 @@ export (int) var speed = 200
 var velocity = Vector2.ZERO
 
 func ready_clothes(_clothingItem = null):
-	hat.texture = $"E-menu/HatSlot".itemTextureRect.texture
-	shirt.texture = $"E-menu/ShirtSlot".itemTextureRect.texture
-	pants.texture = $"E-menu/PantsSlot".itemTextureRect.texture
-	shoes.texture = $"E-menu/ShoesSlot".itemTextureRect.texture
+	hat.texture = Emenu.get_child(0).itemTextureRect.texture
+	shirt.texture = Emenu.get_child(1).itemTextureRect.texture
+	pants.texture = Emenu.get_child(2).itemTextureRect.texture
+	shoes.texture = Emenu.get_child(3).itemTextureRect.texture
 
 func connect_emenu():
 	for slots in Emenu.get_children():
@@ -37,6 +37,7 @@ func get_input():
 	basic_movement()
 	
 func _ready():
+	yield(get_tree().root, "ready")
 	ready_clothes()
 	connect_emenu()
 	

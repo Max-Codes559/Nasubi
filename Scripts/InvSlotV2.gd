@@ -2,7 +2,7 @@ extends Slot
 
 onready var itemTextureRect = $ItemTextureRect
 onready var itemSlotTexture = $ItemSlotTexture
-onready var mouse = get_node("../../../../Mouse")
+onready var mouse = $"../../../../Mouse"
 
 enum inventoryResourceNum {
 	mailInventory,

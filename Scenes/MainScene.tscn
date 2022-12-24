@@ -396,379 +396,8 @@ script = ExtResource( 15 )
 [node name="Player" parent="Floor" instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 
-[node name="E-menu" type="VBoxContainer" parent="Floor/Player"]
-visible = false
-margin_left = 38.5714
-margin_top = -13.5714
-margin_right = 58.5714
-margin_bottom = 78.4286
-rect_scale = Vector2( 2, 2 )
-mouse_default_cursor_shape = 2
-custom_constants/separation = 0
-script = ExtResource( 16 )
-
-[node name="HatSlot" parent="Floor/Player/E-menu" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 20.0
-margin_bottom = 23.0
-script = ExtResource( 17 )
-inventoryResource = 2
-acceptType1 = "Clothing"
-acceptType2 = ""
-acceptType3 = ""
-acceptType4 = ""
-
-[node name="ShirtSlot" parent="Floor/Player/E-menu" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 23.0
-margin_right = 20.0
-margin_bottom = 46.0
-script = ExtResource( 17 )
-inventoryResource = 2
-acceptType1 = "Clothing"
-acceptType2 = ""
-acceptType3 = ""
-acceptType4 = ""
-
-[node name="PantsSlot" parent="Floor/Player/E-menu" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 46.0
-margin_right = 20.0
-margin_bottom = 69.0
-script = ExtResource( 17 )
-inventoryResource = 2
-acceptType1 = "Clothing"
-acceptType2 = ""
-acceptType3 = ""
-acceptType4 = ""
-
-[node name="ShoesSlot" parent="Floor/Player/E-menu" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 69.0
-margin_right = 20.0
-margin_bottom = 92.0
-script = ExtResource( 17 )
-inventoryResource = 2
-acceptType1 = "Clothing"
-acceptType2 = ""
-acceptType3 = ""
-acceptType4 = "Clothing"
-
-[node name="Closet" type="Sprite" parent="."]
-position = Vector2( 26, 310 )
-scale = Vector2( 4.60937, 4.60937 )
-z_index = 5
-texture = SubResource( 3 )
-
-[node name="Button2" type="Button" parent="Closet"]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -8.0
-margin_top = -16.0
-margin_right = 8.0
-margin_bottom = 47.0
-rect_scale = Vector2( 1, 0.5 )
-
-[node name="ClosetInv" type="TextureRect" parent="Closet"]
-visible = false
-margin_left = -3.47119
-margin_top = -65.3018
-margin_right = 56.5288
-margin_bottom = -0.301765
-texture = ExtResource( 7 )
-expand = true
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ClosetInvGrid" type="GridContainer" parent="Closet/ClosetInv"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_default_cursor_shape = 2
-custom_constants/vseparation = 0
-custom_constants/hseparation = 0
-columns = 3
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InventorySlotDisplay10" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 20.0
-margin_bottom = 20.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay11" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 20.0
-margin_right = 40.0
-margin_bottom = 20.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay12" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 40.0
-margin_right = 60.0
-margin_bottom = 20.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay13" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 22.0
-margin_right = 20.0
-margin_bottom = 42.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay14" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 22.0
-margin_right = 40.0
-margin_bottom = 42.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay15" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 40.0
-margin_top = 22.0
-margin_right = 60.0
-margin_bottom = 42.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay16" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 44.0
-margin_right = 20.0
-margin_bottom = 64.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay17" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 44.0
-margin_right = 40.0
-margin_bottom = 64.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay18" parent="Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 40.0
-margin_top = 44.0
-margin_right = 60.0
-margin_bottom = 64.0
-script = ExtResource( 17 )
-inventoryResource = 1
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="Mail" type="Sprite" parent="."]
-position = Vector2( 672, 94 )
-scale = Vector2( 4, 4 )
-z_index = 5
-texture = ExtResource( 5 )
-
-[node name="Button" type="Button" parent="Mail"]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -9.0
-margin_top = -9.0
-margin_right = 9.0
-margin_bottom = 27.0
-rect_scale = Vector2( 1, 0.5 )
-
-[node name="MailInv" type="TextureRect" parent="Mail"]
-visible = false
-margin_left = 25.0
-margin_top = -20.5
-margin_right = 85.0
-margin_bottom = 44.5
-texture = ExtResource( 7 )
-expand = true
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InventoryDisplay" type="GridContainer" parent="Mail/MailInv"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_default_cursor_shape = 2
-custom_constants/vseparation = 0
-custom_constants/hseparation = 0
-columns = 3
-script = ExtResource( 11 )
-
-[node name="InventorySlotDisplay" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 20.0
-margin_bottom = 20.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay2" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 20.0
-margin_right = 40.0
-margin_bottom = 20.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay3" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 40.0
-margin_right = 60.0
-margin_bottom = 20.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay4" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 22.0
-margin_right = 20.0
-margin_bottom = 42.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay5" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 22.0
-margin_right = 40.0
-margin_bottom = 42.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay6" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 40.0
-margin_top = 22.0
-margin_right = 60.0
-margin_bottom = 42.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay7" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 44.0
-margin_right = 20.0
-margin_bottom = 64.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay8" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 20.0
-margin_top = 44.0
-margin_right = 40.0
-margin_bottom = 64.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="InventorySlotDisplay9" parent="Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 40.0
-margin_top = 44.0
-margin_right = 60.0
-margin_bottom = 64.0
-script = ExtResource( 17 )
-acceptType1 = "Furniture"
-acceptType2 = "Food"
-acceptType3 = "Clothing"
-acceptType4 = ""
-
-[node name="Mouse" type="Sprite" parent="."]
-position = Vector2( 2, 2 )
-scale = Vector2( 4, 4 )
-z_index = 5
-script = ExtResource( 8 )
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Floor/Player"]
+remote_path = NodePath("../../../UILayer/Menus/PlayerMenus")
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -802,9 +431,6 @@ rotation = 1.5708
 position = Vector2( 19.0016, 452 )
 shape = SubResource( 5 )
 
-[node name="SleepMenu" parent="." instance=ExtResource( 22 )]
-visible = false
-
 [node name="FakeLamp" type="Sprite" parent="."]
 position = Vector2( 477, 307 )
 scale = Vector2( 5.1929, 5.1929 )
@@ -817,10 +443,321 @@ texture = ExtResource( 24 )
 energy = 0.7
 
 [node name="AmbientLight" type="CanvasModulate" parent="."]
-color = Color( 0.803922, 0.537255, 0.537255, 1 )
 script = ExtResource( 25 )
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Mouse" type="Sprite" parent="UILayer"]
+position = Vector2( 2, 2 )
+scale = Vector2( 4, 4 )
+z_index = 5
+script = ExtResource( 8 )
+
+[node name="Closet" type="Sprite" parent="UILayer"]
+position = Vector2( 26, 310 )
+scale = Vector2( 4.60937, 4.60937 )
+z_index = 5
+texture = SubResource( 3 )
+
+[node name="Button2" type="Button" parent="UILayer/Closet"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -8.0
+margin_top = -16.0
+margin_right = 8.0
+margin_bottom = 47.0
+rect_scale = Vector2( 1, 0.5 )
+
+[node name="ClosetInv" type="TextureRect" parent="UILayer/Closet"]
+visible = false
+margin_left = -3.47119
+margin_top = -65.3018
+margin_right = 56.5288
+margin_bottom = -0.301765
+texture = ExtResource( 7 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClosetInvGrid" type="GridContainer" parent="UILayer/Closet/ClosetInv"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 3
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventorySlotDisplay10" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay11" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 40.0
+margin_bottom = 20.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay12" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 20.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay13" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 42.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay14" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 40.0
+margin_bottom = 42.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay15" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 22.0
+margin_right = 60.0
+margin_bottom = 42.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay16" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 20.0
+margin_bottom = 64.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay17" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 44.0
+margin_right = 40.0
+margin_bottom = 64.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay18" parent="UILayer/Closet/ClosetInv/ClosetInvGrid" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 44.0
+margin_right = 60.0
+margin_bottom = 64.0
+script = ExtResource( 17 )
+inventoryResource = 1
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="Mail" type="Sprite" parent="UILayer"]
+position = Vector2( 672, 94 )
+scale = Vector2( 4, 4 )
+z_index = 5
+texture = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="UILayer/Mail"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -9.0
+margin_top = -9.0
+margin_right = 9.0
+margin_bottom = 27.0
+rect_scale = Vector2( 1, 0.5 )
+
+[node name="MailInv" type="TextureRect" parent="UILayer/Mail"]
+visible = false
+margin_left = 25.0
+margin_top = -20.5
+margin_right = 85.0
+margin_bottom = 44.5
+texture = ExtResource( 7 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryDisplay" type="GridContainer" parent="UILayer/Mail/MailInv"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 3
+script = ExtResource( 11 )
+
+[node name="InventorySlotDisplay" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 20.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay2" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_right = 40.0
+margin_bottom = 20.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay3" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_right = 60.0
+margin_bottom = 20.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay4" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 42.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay5" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 22.0
+margin_right = 40.0
+margin_bottom = 42.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay6" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 22.0
+margin_right = 60.0
+margin_bottom = 42.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay7" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 20.0
+margin_bottom = 64.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay8" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 44.0
+margin_right = 40.0
+margin_bottom = 64.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
+
+[node name="InventorySlotDisplay9" parent="UILayer/Mail/MailInv/InventoryDisplay" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 44.0
+margin_right = 60.0
+margin_bottom = 64.0
+script = ExtResource( 17 )
+acceptType1 = "Furniture"
+acceptType2 = "Food"
+acceptType3 = "Clothing"
+acceptType4 = ""
 
 [node name="MagazineOpen" type="TextureRect" parent="UILayer"]
 margin_left = 881.0
@@ -847,6 +784,77 @@ rect_pivot_offset = Vector2( -932, -184 )
 texture = ExtResource( 18 )
 expand = true
 script = ExtResource( 21 )
+
+[node name="SleepMenu" parent="UILayer" instance=ExtResource( 22 )]
+visible = false
+
+[node name="Menus" type="Node2D" parent="UILayer"]
+
+[node name="PlayerMenus" type="Node2D" parent="UILayer/Menus"]
+position = Vector2( 464, 439 )
+scale = Vector2( 1.4, 1.4 )
+
+[node name="E-menu" type="VBoxContainer" parent="UILayer/Menus/PlayerMenus"]
+visible = false
+margin_left = 32.8572
+margin_top = -3.57144
+margin_right = 52.8572
+margin_bottom = 88.4285
+rect_scale = Vector2( 2, 2 )
+mouse_default_cursor_shape = 2
+custom_constants/separation = 0
+script = ExtResource( 16 )
+
+[node name="HatSlot" parent="UILayer/Menus/PlayerMenus/E-menu" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 20.0
+margin_bottom = 22.0
+script = ExtResource( 17 )
+inventoryResource = 2
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = ""
+
+[node name="ShirtSlot" parent="UILayer/Menus/PlayerMenus/E-menu" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 22.0
+margin_right = 20.0
+margin_bottom = 45.0
+script = ExtResource( 17 )
+inventoryResource = 2
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = ""
+
+[node name="PantsSlot" parent="UILayer/Menus/PlayerMenus/E-menu" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 45.0
+margin_right = 20.0
+margin_bottom = 68.0
+script = ExtResource( 17 )
+inventoryResource = 2
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = ""
+
+[node name="ShoesSlot" parent="UILayer/Menus/PlayerMenus/E-menu" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 68.0
+margin_right = 20.0
+margin_bottom = 91.0
+script = ExtResource( 17 )
+inventoryResource = 2
+acceptType1 = "Clothing"
+acceptType2 = ""
+acceptType3 = ""
+acceptType4 = "Clothing"
 
 [connection signal="gui_input" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_mouse_entered"]
@@ -902,7 +910,7 @@ script = ExtResource( 21 )
 [connection signal="gui_input" from="Floor/FloorGrid/FloorSlot18" to="Floor/FloorGrid/FloorSlot18" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/FloorGrid/FloorSlot18" to="Floor/FloorGrid/FloorSlot18" method="_on_FloorSlot_mouse_entered"]
 [connection signal="mouse_exited" from="Floor/FloorGrid/FloorSlot18" to="Floor/FloorGrid/FloorSlot18" method="_on_FloorSlot_mouse_exited"]
-[connection signal="pressed" from="Closet/Button2" to="Closet/ClosetInv" method="_on_Button2_pressed"]
-[connection signal="pressed" from="Mail/Button" to="Mail/MailInv" method="_on_Button_pressed"]
+[connection signal="pressed" from="UILayer/Closet/Button2" to="UILayer/Closet/ClosetInv" method="_on_Button2_pressed"]
+[connection signal="pressed" from="UILayer/Mail/Button" to="UILayer/Mail/MailInv" method="_on_Button_pressed"]
 [connection signal="gui_input" from="UILayer/MagazineOpen" to="UILayer/MagazineOpen" method="_on_MagazineOpen_gui_input"]
 [connection signal="gui_input" from="UILayer/MinigameOpen" to="UILayer/MinigameOpen" method="_on_MinigameOpen_gui_input"]

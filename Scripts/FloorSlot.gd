@@ -4,7 +4,7 @@ signal item_unplaced(item)
 signal item_placed
 signal furniture_type(item)
 
-onready var Mouse = get_node("../../../Mouse")
+onready var Mouse = $"../../../UILayer/Mouse"
 onready var Grid = get_parent()
 var FurnitureScene = preload("res://Scenes/FurnitureItem.tscn")
 var Selector = preload("res://Scenes/Selector.tscn")

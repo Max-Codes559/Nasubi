@@ -1,6 +1,6 @@
 extends GridContainer
 
-onready var mouse = get_node("../../Mouse")
+onready var mouse = $"../../UILayer/Mouse"
 
 func close_grid():
 	if modulate == Color.white:
