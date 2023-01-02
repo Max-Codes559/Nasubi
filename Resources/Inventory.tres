@@ -1,15 +1,16 @@
-[gd_resource type="Resource" load_steps=10 format=2]
+[gd_resource type="Resource" load_steps=11 format=2]
 
 [ext_resource path="res://Items/Item Resources/Furniture/tables/BrownTable.tres" type="Resource" id=1]
 [ext_resource path="res://Items/Item Resources/Furniture/tables/SmallWhiteTable.tres" type="Resource" id=2]
-[ext_resource path="res://Items/Item Resources/Furniture/BeanBag.tres" type="Resource" id=3]
+[ext_resource path="res://Items/Item Resources/Furniture/lights/Fireplace.tres" type="Resource" id=3]
 [ext_resource path="res://Items/Item Resources/Furniture/chairs/GreenChair.tres" type="Resource" id=4]
 [ext_resource path="res://Items/Item Resources/Furniture/tables/Whitetable.tres" type="Resource" id=5]
 [ext_resource path="res://Items/Item Resources/Furniture/tables/SmallBrownTable.tres" type="Resource" id=6]
 [ext_resource path="res://Items/Item Resources/Furniture/tables/WoodgrainTable.tres" type="Resource" id=7]
-[ext_resource path="res://Items/Item Resources/Furniture/Fireplace.tres" type="Resource" id=8]
+[ext_resource path="res://Items/Item Resources/Furniture/chairs/BeanBag.tres" type="Resource" id=8]
 [ext_resource path="res://Scripts/classes/inventory.gd" type="Script" id=9]
+[ext_resource path="res://Items/Item Resources/Furniture/lights/DomeLamp1.tres" type="Resource" id=10]
 
 [resource]
 script = ExtResource( 9 )
-items = [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 3 ) ]
+items = [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 8 ) ]

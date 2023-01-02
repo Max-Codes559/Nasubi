@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -23,8 +23,7 @@
 [ext_resource path="res://Scripts/MinigameOpen.gd" type="Script" id=21]
 [ext_resource path="res://Scenes/SleepMenu.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scripts/main.gd" type="Script" id=23]
-[ext_resource path="res://Other Sprites/2DLight-01.png" type="Texture" id=24]
-[ext_resource path="res://Scenes/AmbientLight.gd" type="Script" id=25]
+[ext_resource path="res://Scripts/AmbientLight.gd" type="Script" id=25]
 
 [sub_resource type="TileSet" id=2]
 0/name = "floor and walls spritesheet.png 0"
@@ -165,10 +164,6 @@ extents = Vector2( 10, 230.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 10, 461.5 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 393, 187, 12, 16 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 23 )
@@ -430,17 +425,6 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
 position = Vector2( 19.0016, 452 )
 shape = SubResource( 5 )
-
-[node name="FakeLamp" type="Sprite" parent="."]
-position = Vector2( 477, 307 )
-scale = Vector2( 5.1929, 5.1929 )
-texture = SubResource( 6 )
-
-[node name="TestLight" type="Light2D" parent="FakeLamp"]
-position = Vector2( 0.000488281, 1.34808 )
-scale = Vector2( 0.0755559, 0.0573525 )
-texture = ExtResource( 24 )
-energy = 0.7
 
 [node name="AmbientLight" type="CanvasModulate" parent="."]
 script = ExtResource( 25 )
@@ -776,10 +760,10 @@ scale = Vector2( 0.870979, 0.870979 )
 
 [node name="MinigameOpen" type="TextureRect" parent="UILayer"]
 modulate = Color( 0.509804, 0.129412, 0.129412, 1 )
-margin_left = 69.0
-margin_top = 64.0
-margin_right = 178.0
-margin_bottom = 173.0
+margin_left = 222.0
+margin_top = 514.0
+margin_right = 331.0
+margin_bottom = 623.0
 rect_pivot_offset = Vector2( -932, -184 )
 texture = ExtResource( 18 )
 expand = true

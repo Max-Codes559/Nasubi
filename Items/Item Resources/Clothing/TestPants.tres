@@ -10,3 +10,5 @@ texture = ExtResource( 2 )
 itemType = "Clothing"
 size = ""
 clothingType = "pants"
+lightLevel = 0
+lightColor = Color( 1, 1, 1, 1 )

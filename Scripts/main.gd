@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var SleepMenu = $SleepMenu
+onready var SleepMenu = $UILayer/SleepMenu
 
 func _input(_event):
 	if Input.is_action_just_pressed("space"):

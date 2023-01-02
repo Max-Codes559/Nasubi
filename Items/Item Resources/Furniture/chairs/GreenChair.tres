@@ -14,3 +14,5 @@ texture = SubResource( 1 )
 itemType = "Furniture"
 size = "1x1"
 clothingType = ""
+lightLevel = 0
+lightColor = Color( 1, 1, 1, 1 )

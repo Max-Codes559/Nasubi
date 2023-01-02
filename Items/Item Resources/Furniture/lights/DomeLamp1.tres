@@ -5,12 +5,14 @@
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
-region = Rect2( 222, 1, 14, 32 )
+region = Rect2( 393, 187, 12, 16 )
 
 [resource]
 script = ExtResource( 1 )
-name = "Fireplace"
+name = "Dome Lamp 1"
 texture = SubResource( 1 )
 itemType = "Furniture"
-size = "tall"
+size = "1x1"
 clothingType = ""
+lightLevel = 2
+lightColor = Color( 0.980392, 0.976471, 0.85098, 1 )
