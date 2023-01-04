@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -23,7 +23,9 @@
 [ext_resource path="res://Scripts/MinigameOpen.gd" type="Script" id=21]
 [ext_resource path="res://Scenes/SleepMenu.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scripts/main.gd" type="Script" id=23]
+[ext_resource path="res://BarTheme.tres" type="Theme" id=24]
 [ext_resource path="res://Scripts/AmbientLight.gd" type="Script" id=25]
+[ext_resource path="res://Scenes/HungerBar.gd" type="Script" id=26]
 
 [sub_resource type="TileSet" id=2]
 0/name = "floor and walls spritesheet.png 0"
@@ -744,9 +746,9 @@ acceptType3 = "Clothing"
 acceptType4 = ""
 
 [node name="MagazineOpen" type="TextureRect" parent="UILayer"]
-margin_left = 881.0
+margin_left = 913.0
 margin_top = 504.0
-margin_right = 990.0
+margin_right = 1022.0
 margin_bottom = 613.0
 rect_pivot_offset = Vector2( -932, -184 )
 texture = ExtResource( 18 )
@@ -760,10 +762,10 @@ scale = Vector2( 0.870979, 0.870979 )
 
 [node name="MinigameOpen" type="TextureRect" parent="UILayer"]
 modulate = Color( 0.509804, 0.129412, 0.129412, 1 )
-margin_left = 222.0
-margin_top = 514.0
-margin_right = 331.0
-margin_bottom = 623.0
+margin_left = 912.0
+margin_top = 382.0
+margin_right = 1021.0
+margin_bottom = 491.0
 rect_pivot_offset = Vector2( -932, -184 )
 texture = ExtResource( 18 )
 expand = true
@@ -839,6 +841,15 @@ acceptType1 = "Clothing"
 acceptType2 = ""
 acceptType3 = ""
 acceptType4 = "Clothing"
+
+[node name="HungerBar" type="ProgressBar" parent="UILayer"]
+margin_left = 40.0
+margin_top = 511.0
+margin_right = 516.0
+margin_bottom = 552.0
+theme = ExtResource( 24 )
+value = 50.0
+script = ExtResource( 26 )
 
 [connection signal="gui_input" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_mouse_entered"]

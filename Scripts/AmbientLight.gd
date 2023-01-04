@@ -8,7 +8,7 @@ var seasonal_colour = [
 ]
 
 func _ready():
-	global.connect("date_change", self, "on_date_changed")
+	global.connect("date_changed", self, "on_date_changed")
 	on_date_changed(global.date)
 
 func on_date_changed(date):
