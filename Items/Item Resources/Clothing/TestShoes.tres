@@ -12,3 +12,4 @@ size = ""
 clothingType = "shoes"
 lightLevel = 0
 lightColor = Color( 1, 1, 1, 1 )
+foodValue = 0

@@ -1,11 +1,14 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=9 format=2]
 
 [ext_resource path="res://Items/Item Resources/Furniture/FridgeDarkGrey1.tres" type="Resource" id=1]
+[ext_resource path="res://Items/Item Resources/Food/Turnip.tres" type="Resource" id=2]
 [ext_resource path="res://Items/Item Resources/Furniture/Bathtub.tres" type="Resource" id=3]
 [ext_resource path="res://Items/Item Resources/Furniture/chairs/GreenChair.tres" type="Resource" id=4]
 [ext_resource path="res://Scripts/classes/inventory.gd" type="Script" id=5]
 [ext_resource path="res://Items/Item Resources/Furniture/lights/DomeLamp1.tres" type="Resource" id=6]
+[ext_resource path="res://Items/Item Resources/Food/Carrot.tres" type="Resource" id=7]
+[ext_resource path="res://Items/Item Resources/Food/Daikon.tres" type="Resource" id=8]
 
 [resource]
 script = ExtResource( 5 )
-items = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ) ]
+items = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 1 ) ]

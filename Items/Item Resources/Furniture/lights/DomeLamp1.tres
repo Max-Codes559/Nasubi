@@ -16,3 +16,4 @@ size = "1x1"
 clothingType = ""
 lightLevel = 2
 lightColor = Color( 0.980392, 0.976471, 0.85098, 1 )
+foodValue = 0

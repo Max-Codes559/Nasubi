@@ -11,7 +11,7 @@ var previous_item = null
 const mailInventory = preload("res://Resources/Inventory.tres")
 const closetInventory = preload("res://Resources/ClosetInventory.tres")
 const clothingInventory = preload("res://Resources/Clothing.tres")
-const resourceArray = [mailInventory, closetInventory,clothingInventory]
+const resourceArray = [mailInventory, closetInventory, clothingInventory]
 
 var inventory
 
@@ -27,3 +27,13 @@ func click_pick_up(mouse):
 	elif item != null:
 		emit_signal("item_clicked", item)
 		#when clicking on item slot in inventory that is full, sends signal to mouse
+
+func use_item():
+	var usedItem = inventory.items[get_index()]
+	if usedItem != null:
+		print(usedItem.name)
+		
+		if usedItem.itemType == "Food":
+			global.hunger = inventory.set_item(get_index(), null).foodValue
+		
+	

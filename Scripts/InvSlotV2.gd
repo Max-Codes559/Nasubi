@@ -37,4 +37,7 @@ func _on_InventorySlotDisplay_gui_input(event):
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			if mouse.held_item == null or acceptedTypes.has(mouse.held_item.itemType):
 				click_pick_up(mouse)
+				
+		elif event.button_index == BUTTON_RIGHT and event.pressed:
+			use_item()
 

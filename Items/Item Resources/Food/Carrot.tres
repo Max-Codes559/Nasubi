@@ -7,5 +7,9 @@
 script = ExtResource( 1 )
 name = "Carrot"
 texture = ExtResource( 2 )
-itemType = "Furniture"
+itemType = "Food"
 size = ""
+clothingType = ""
+lightLevel = 0
+lightColor = Color( 1, 1, 1, 1 )
+foodValue = 10

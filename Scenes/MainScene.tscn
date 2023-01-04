@@ -20,12 +20,12 @@
 [ext_resource path="res://Player/Farmer1.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/MagazineOpen.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/MagazineInterface.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scripts/MinigameOpen.gd" type="Script" id=21]
 [ext_resource path="res://Scenes/SleepMenu.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scripts/main.gd" type="Script" id=23]
 [ext_resource path="res://BarTheme.tres" type="Theme" id=24]
 [ext_resource path="res://Scripts/AmbientLight.gd" type="Script" id=25]
-[ext_resource path="res://Scenes/HungerBar.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/HungerBar.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/Minigame.gd" type="Script" id=27]
 
 [sub_resource type="TileSet" id=2]
 0/name = "floor and walls spritesheet.png 0"
@@ -429,6 +429,7 @@ position = Vector2( 19.0016, 452 )
 shape = SubResource( 5 )
 
 [node name="AmbientLight" type="CanvasModulate" parent="."]
+color = Color( 0.643137, 0.807843, 0.882353, 1 )
 script = ExtResource( 25 )
 
 [node name="UILayer" type="CanvasLayer" parent="."]
@@ -760,17 +761,6 @@ visible = false
 position = Vector2( -882, -463 )
 scale = Vector2( 0.870979, 0.870979 )
 
-[node name="MinigameOpen" type="TextureRect" parent="UILayer"]
-modulate = Color( 0.509804, 0.129412, 0.129412, 1 )
-margin_left = 912.0
-margin_top = 382.0
-margin_right = 1021.0
-margin_bottom = 491.0
-rect_pivot_offset = Vector2( -932, -184 )
-texture = ExtResource( 18 )
-expand = true
-script = ExtResource( 21 )
-
 [node name="SleepMenu" parent="UILayer" instance=ExtResource( 22 )]
 visible = false
 
@@ -849,7 +839,19 @@ margin_right = 516.0
 margin_bottom = 552.0
 theme = ExtResource( 24 )
 value = 50.0
+allow_greater = true
+allow_lesser = true
 script = ExtResource( 26 )
+
+[node name="Minigame" type="TextureRect" parent="UILayer"]
+self_modulate = Color( 0.462745, 0.0784314, 0.0784314, 1 )
+margin_left = 6.0
+margin_top = 17.0
+margin_right = 105.0
+margin_bottom = 116.0
+texture = ExtResource( 18 )
+expand = true
+script = ExtResource( 27 )
 
 [connection signal="gui_input" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_mouse_entered"]
@@ -908,4 +910,4 @@ script = ExtResource( 26 )
 [connection signal="pressed" from="UILayer/Closet/Button2" to="UILayer/Closet/ClosetInv" method="_on_Button2_pressed"]
 [connection signal="pressed" from="UILayer/Mail/Button" to="UILayer/Mail/MailInv" method="_on_Button_pressed"]
 [connection signal="gui_input" from="UILayer/MagazineOpen" to="UILayer/MagazineOpen" method="_on_MagazineOpen_gui_input"]
-[connection signal="gui_input" from="UILayer/MinigameOpen" to="UILayer/MinigameOpen" method="_on_MinigameOpen_gui_input"]
+[connection signal="gui_input" from="UILayer/Minigame" to="UILayer/Minigame" method="_on_Minigame_gui_input"]

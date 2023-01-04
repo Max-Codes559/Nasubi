@@ -16,3 +16,4 @@ size = "tall"
 clothingType = ""
 lightLevel = 3
 lightColor = Color( 0.729412, 0.25098, 0.192157, 1 )
+foodValue = 0

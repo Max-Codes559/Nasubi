@@ -12,7 +12,7 @@ var months = 4
 #12 days after testing
 var date = Vector3(0, 0, 0) setget set_date
 #month, day, total days played
-var hunger = 100 
+var hunger = 100 setget set_hunger
 
 func set_date(addDate):
 	date += addDate
@@ -27,6 +27,11 @@ func set_date(addDate):
 	
 	randomize()
 	var prevHunger = hunger
-	hunger -= (10 + randi() % 9) * addDate.y
-	print(prevHunger - hunger)
+	set_hunger(-(10 + randi() % 9) * addDate.y)
+
+func set_hunger(addHunger):
+	print("addHunger ", addHunger)
+	hunger += addHunger
+	if hunger > 100:
+		hunger = 100
 	emit_signal("hunger_changed", hunger)
