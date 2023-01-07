@@ -20,6 +20,6 @@ func _on_Minigame_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			
-			if get_child_count() < 1:
+			if get_child_count() < 1 and global.night == false:
 				spawn_minigame()
 				print("minigame spawned")

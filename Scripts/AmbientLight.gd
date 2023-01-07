@@ -16,7 +16,8 @@ func _ready():
 
 func on_date_changed(date):
 	color = seasonal_colour[date.x]
+	global.night = false
 
 func on_minigame_finished():
 	color = color.darkened(0.90)
-	print("night time")
+	global.night = true
