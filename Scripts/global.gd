@@ -5,8 +5,11 @@ signal hunger_changed(hunger)
 
 var enteredContests = []
 var completedContests = []
-var contestDetailDict= {"res://Items/Item Resources/Furniture/chairs/GreenChair.tres" : 0.50}
-#resource of item, prob of winning it
+var contestDetailDict = {
+	0 : ["res://Items/Item Resources/Furniture/chairs/GreenChair.tres", 0.50],
+	1 : ["res://Items/Item Resources/Furniture/tables/SmallWhiteTable.tres", 0.50]
+	}
+# key(for choosing which entries to list) : resource of item, prob of winning it
 var minigameScore = 0
 var totalScore = 0
 var roomMultiplier = 1
@@ -21,15 +24,23 @@ var night = false
 
 func add_contests_to_array():
 	print("entered contests ", enteredContests.size())
-	var n = 0
-	while totalScore >= 100 and n < enteredContests.size():
-		completedContests.append(enteredContests[n]) 
+	while totalScore >= 100 and enteredContests.size() != 0:
+		var addedEntry = enteredContests.pop_front()
+		completedContests.append(addedEntry) 
 		totalScore -= 100
-		n += 1
 		print(completedContests)
 
 func roll_entries():
-	pass
+	for entries in completedContests:
+		var contestEntry = contestDetailDict[entries[1]]
+		var contestItem = contestEntry[0]
+		var contestProbability = contestEntry[1]
+		randomize()
+		var roll = randi() % 100 +1
+		
+		if roll <= contestProbability * 100:
+			print("you won ", load(contestItem).name)
+	completedContests.clear()
 
 func set_date(addDate):
 	date += addDate
