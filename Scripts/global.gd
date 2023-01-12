@@ -2,13 +2,20 @@ extends Node
 
 signal date_changed(date)
 signal hunger_changed(hunger)
+signal items_changed(indexes)
+signal money_changed(money)
+
+var mailInv = preload("res://Resources/Inventory.tres")
 
 var enteredContests = []
 var completedContests = []
 var contestDetailDict = {
-	0 : ["res://Items/Item Resources/Furniture/chairs/GreenChair.tres", 0.50],
-	1 : ["res://Items/Item Resources/Furniture/tables/SmallWhiteTable.tres", 0.50]
+	0 : ["res://Items/Item Resources/Furniture/chairs/GreenChair.tres", 50],
+	1 : ["res://Items/Item Resources/Furniture/tables/SmallWhiteTable.tres", 50],
+	2 : ["res://Items/Item Resources/Furniture/lights/DomeLamp1.tres", 50],
+	3 : ["res://Items/Item Resources/Furniture/lights/Fireplace.tres", 50]
 	}
+var prizesWon = []
 # key(for choosing which entries to list) : resource of item, prob of winning it
 var minigameScore = 0
 var totalScore = 0
@@ -21,6 +28,8 @@ var date = Vector3(0, 0, 0) setget set_date
 #month, day, total days played
 var hunger = 100 setget set_hunger
 var night = false
+
+var moneyGoal = 5000 setget set_money
 
 func add_contests_to_array():
 	print("entered contests ", enteredContests.size())
@@ -38,9 +47,25 @@ func roll_entries():
 		randomize()
 		var roll = randi() % 100 +1
 		
-		if roll <= contestProbability * 100:
-			print("you won ", load(contestItem).name)
+		if roll <= contestProbability:
+			prizesWon.append(contestItem)
 	completedContests.clear()
+
+func find_empty_slot():
+	var n = 0
+	for items in mailInv.items:
+		if items == null:
+			return n
+		n += 1
+
+func deliver_prizes():
+	#adds items to mailInv and setgets moneyGoal
+	for prizes in prizesWon:
+		var prizesResource = load(prizes)
+		mailInv.items[find_empty_slot()] = prizesResource
+		emit_signal("items_changed", find_empty_slot())
+		set_money(prizesResource.moneyValue)
+	prizesWon.clear()
 
 func set_date(addDate):
 	date += addDate
@@ -61,6 +86,7 @@ func set_date(addDate):
 	minigameScore = 0
 	add_contests_to_array()
 	roll_entries()
+	deliver_prizes()
 	print("totalscore = ", totalScore)
 
 func set_hunger(addHunger):
@@ -69,3 +95,7 @@ func set_hunger(addHunger):
 	if hunger > 100:
 		hunger = 100
 	emit_signal("hunger_changed", hunger)
+
+func set_money(addMoney):
+	moneyGoal -= addMoney
+	emit_signal("money_changed", addMoney)

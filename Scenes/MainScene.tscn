@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Items/furniture pack coloured outline.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Player/Farmer1.png" type="Texture" id=18]
 [ext_resource path="res://Scripts/MagazineOpen.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/MagazineInterface.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/MoneyGoalLabel.gd" type="Script" id=21]
 [ext_resource path="res://Scenes/SleepMenu.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scripts/main.gd" type="Script" id=23]
 [ext_resource path="res://BarTheme.tres" type="Theme" id=24]
@@ -437,7 +438,7 @@ script = ExtResource( 25 )
 [node name="Mouse" type="Sprite" parent="UILayer"]
 position = Vector2( 2, 2 )
 scale = Vector2( 4, 4 )
-z_index = 5
+z_index = 6
 script = ExtResource( 8 )
 
 [node name="Closet" type="Sprite" parent="UILayer"]
@@ -852,6 +853,13 @@ margin_bottom = 116.0
 texture = ExtResource( 18 )
 expand = true
 script = ExtResource( 27 )
+
+[node name="MoneyGoal" type="Label" parent="UILayer"]
+margin_left = 434.0
+margin_right = 474.0
+margin_bottom = 14.0
+rect_scale = Vector2( 5, 5 )
+script = ExtResource( 21 )
 
 [connection signal="gui_input" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_gui_input"]
 [connection signal="mouse_entered" from="Floor/FloorGrid/FloorSlot" to="Floor/FloorGrid/FloorSlot" method="_on_FloorSlot_mouse_entered"]

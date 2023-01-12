@@ -11,3 +11,5 @@ export(int, 0, 5) var lightLevel
 export(Color) var lightColor = Color(1, 1, 1)
 
 export(int, 0, 100) var foodValue = 0
+
+export(int) var moneyValue = 0

@@ -4,6 +4,7 @@ var inventory = preload("res://Resources/Inventory.tres")
 
 func _ready():
 	inventory.connect("items_changed", self, "on_items_changed")
+	global.connect("items_changed", self, "on_items_changed")
 	#connects to signal in Inventory resource
 	update_full_inventory_display()
 	
