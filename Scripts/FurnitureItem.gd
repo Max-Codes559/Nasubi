@@ -34,7 +34,8 @@ func apply_furniture_size(item):
 		button.rect_size *= 2
 			
 	elif item.size == "tall":
-		collisionBody.position = slot.rect_size / 2
+		collisionBody.position.x = slot.rect_size.x / 2
+		collisionBody.position.y = slot.rect_size.y / 1.3
 		sprite.position.x = slot.rect_size.x / 2
 		sprite.position.y = slot.rect_size.y / 16
 		shadow.position = sprite.position
