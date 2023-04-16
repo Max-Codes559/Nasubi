@@ -1,0 +1,129 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Player/nasubiplayerbaseV2.png" type="Texture" id=1]
+[ext_resource path="res://Other Sprites/Nasubi Floor-01.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Minigame Scripts/BubblePop Scripts/BubblePopPlayer.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Mini Games/BubblePop/BubblePop.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Minigame Scripts/BubblePop Scripts/FirePoint.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 461.5 )
+
+[node name="BubblePop" type="Node2D"]
+z_index = 10
+script = ExtResource( 4 )
+
+[node name="Back" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 2.25551, 1.57895 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BubblePopPlayer" type="Sprite" parent="."]
+position = Vector2( 562, 528 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Hat" type="Sprite" parent="BubblePopPlayer"]
+
+[node name="Shirt" type="Sprite" parent="BubblePopPlayer"]
+
+[node name="Pants" type="Sprite" parent="BubblePopPlayer"]
+
+[node name="Shoes" type="Sprite" parent="BubblePopPlayer"]
+
+[node name="PuzzleGrid" type="GridContainer" parent="."]
+margin_left = 16.0
+margin_right = 16.0
+rect_scale = Vector2( 6, 6 )
+custom_constants/vseparation = 8
+custom_constants/hseparation = 8
+columns = 20
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FirePoint" type="Node2D" parent="."]
+position = Vector2( 530, 456 )
+script = ExtResource( 5 )
+
+[node name="FireTimer" type="Timer" parent="FirePoint"]
+wait_time = 0.5
+one_shot = true
+
+[node name="TempWalls" type="Node2D" parent="."]
+
+[node name="BackWall" type="StaticBody2D" parent="TempWalls"]
+position = Vector2( 1021, -9 )
+rotation = 1.5708
+scale = Vector2( 1.15426, 1.10053 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempWalls/BackWall"]
+position = Vector2( 18.0016, 452 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="TempWalls/BackWall"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 18.0016, 445.5 )
+rotation = -1.5708
+scale = Vector2( 2.05947, 0.0526316 )
+texture = ExtResource( 2 )
+
+[node name="Wall4" type="StaticBody2D" parent="TempWalls"]
+position = Vector2( 1128, 624 )
+rotation = 1.5708
+scale = Vector2( -1.74367, 1.39401 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempWalls/Wall4"]
+position = Vector2( 18.0016, 452 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="TempWalls/Wall4"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 18.0016, 459.5 )
+rotation = -1.5708
+scale = Vector2( 2.06388, 0.0526316 )
+texture = ExtResource( 2 )
+
+[node name="Wall5" type="StaticBody2D" parent="TempWalls"]
+position = Vector2( 1033, 634 )
+rotation = 3.14159
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempWalls/Wall5"]
+position = Vector2( 18.0016, 452 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="TempWalls/Wall5"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 18.0016, 452 )
+rotation = -1.5708
+scale = Vector2( 2.03084, 0.0526316 )
+texture = ExtResource( 2 )
+
+[node name="Wall6" type="StaticBody2D" parent="TempWalls"]
+position = Vector2( 27, 624 )
+rotation = 3.14159
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempWalls/Wall6"]
+position = Vector2( 18.0016, 452 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="TempWalls/Wall6"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 18.0016, 452 )
+rotation = -1.5708
+scale = Vector2( 2.03084, 0.0526316 )
+texture = ExtResource( 2 )
+
+[connection signal="timeout" from="FirePoint/FireTimer" to="FirePoint" method="_on_Timer_timeout"]

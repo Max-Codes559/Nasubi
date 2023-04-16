@@ -32,9 +32,6 @@ func basic_movement():
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
-
-func get_input():
-	basic_movement()
 	
 func _ready():
 	yield(get_tree().root, "ready")
@@ -42,7 +39,7 @@ func _ready():
 	connect_emenu()
 	
 func _physics_process(delta):
-	get_input()
+	basic_movement()
 	move_and_slide(velocity, Vector2.ZERO)
 
 func _input(event):

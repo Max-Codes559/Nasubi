@@ -3,7 +3,8 @@ extends TextureRect
 signal minigameFinished
 
 var minigames = [
-	preload("res://Scenes/Mini Games/TestMinigame.tscn")
+	#preload("res://Scenes/Mini Games/TestMinigame.tscn"),
+	preload("res://Scenes/Mini Games/BubblePop/BubblePop.tscn")
 ]
 
 func finish_minigame():
